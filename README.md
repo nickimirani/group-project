@@ -9,6 +9,6 @@
 </head>
 
 <body>
-    
+    We will do the arcade game Pac-Man in Javascript. 
 </body
 </html>
