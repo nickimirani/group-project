@@ -1,5 +1,5 @@
 # group-project
 
 
-    We will do the arcade game Pac-Man in Javascript. 
+    We will do our version of the arcade game Pac-Man in Javascript. 
 
