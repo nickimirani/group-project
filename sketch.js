@@ -3,6 +3,9 @@ function preload(){
 }
 
 function setup(){
+    //dungeon
+    createCanvas(700,700);
+    background('#222222');
 }
 
 function draw(){
