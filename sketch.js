@@ -6,7 +6,6 @@ function setup(){
   createCanvas(500,650);
   background(51);
   
-  
 }
 
 function draw(){
@@ -89,7 +88,7 @@ function steve(x,y){
     strokeWeight(1);
     stroke(51);
     fill(255,255, 0);
-    rect(x,y, 25,25,10);
+    rect(x,y, 30,30,10);
     
 }
 
@@ -98,9 +97,9 @@ function snake1(x,y){
     strokeWeight(1);
     stroke(51);
     fill(0, 255 , 0);
-    rect(x,y,50, 20);
-    
+    rect(x,y,50, 20);  
 }
+
 //snake2
 function snake2(x,y){
     strokeWeight(1);
