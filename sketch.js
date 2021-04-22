@@ -1,3 +1,6 @@
+let snakePositionX = 40;
+let snakePositionY = 40;
+
 function preload(){
     
 }
@@ -5,12 +8,19 @@ function preload(){
 function setup(){
   createCanvas(500,650);
   background(51);
-  
+  frameRate(15); 
 }
 
 function draw(){
     //snake positions
-    snake1(40,40); 
+    snake1(snakePositionX, snakePositionY); 
+    snakePositionX = snakePositionX + 3;
+    if (snakePositionX > 400){
+        snakePositionY = snakePositionY + 3;
+        snakePositionX = snakePositionX -3;
+
+    }
+
     snake2(100,40);
     snake3(160, 40);
     snake4(220, 40);
@@ -43,28 +53,28 @@ function draw(){
    line(300,440,300,470);
    
    // "L"shape wall
-   noFill()
+   noFill();
    beginShape();
    vertex(110,110);
    vertex(110,90);
    vertex(170,90);
    endShape();
   
-   noFill()
+   noFill();
    beginShape();
    vertex(390,110);
    vertex(390,90);
    vertex(330,90);
    endShape();
   
-   noFill()
+   noFill();
    beginShape();
    vertex(110,500);
    vertex(110,520);
    vertex(170,520);
    endShape();
    
-   noFill()
+   noFill();
    beginShape();
    vertex(390,500);
    vertex(390,520);
@@ -72,7 +82,7 @@ function draw(){
    endShape();
   
    // "C"shape wall
-   noFill()
+   noFill();
    beginShape();
    vertex(300,360);
    vertex(300,390);
@@ -94,7 +104,7 @@ function steve(x,y){
 
 //snake1
 function snake1(x,y){
-    strokeWeight(1);
+    //strokeWeight(1);
     stroke(51);
     fill(0, 255 , 0);
     rect(x,y,50, 20);  
@@ -102,7 +112,7 @@ function snake1(x,y){
 
 //snake2
 function snake2(x,y){
-    strokeWeight(1);
+    //strokeWeight(1);
     fill(255,0,0);
     rect(x,y,50, 20);
 }
