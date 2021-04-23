@@ -31,18 +31,26 @@ function draw(){
     steve(stevePositionX,stevePositionY); 
     if (keyIsDown(LEFT_ARROW)) {
         stevePositionX -= 5;
+        clear();
+        background(51);
     }
     
     if (keyIsDown(RIGHT_ARROW)) {
         stevePositionX += 5;
+        clear();
+        background(51);
     }
     
     if (keyIsDown(UP_ARROW)) {
         stevePositionY -= 5;
+        clear();
+        background(51);
     }
     
     if (keyIsDown(DOWN_ARROW)) {
         stevePositionY += 5;
+        clear();
+        background(51);
     }
     
     
