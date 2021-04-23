@@ -1,5 +1,7 @@
 let snakePositionX = 40;
 let snakePositionY = 40;
+let stevePositionX=230;
+let stevePositionY=100;
 
 function preload(){
     
@@ -26,7 +28,23 @@ function draw(){
     snake4(220, 40);
     
     //steve position
-    steve(230,100);  
+    steve(stevePositionX,stevePositionY); 
+    if (keyIsDown(LEFT_ARROW)) {
+        stevePositionX -= 5;
+    }
+    
+    if (keyIsDown(RIGHT_ARROW)) {
+        stevePositionX += 5;
+    }
+    
+    if (keyIsDown(UP_ARROW)) {
+        stevePositionY -= 5;
+    }
+    
+    if (keyIsDown(DOWN_ARROW)) {
+        stevePositionY += 5;
+    }
+    
     
    //game fence
    noFill();
@@ -107,7 +125,8 @@ function snake1(x,y){
     //strokeWeight(1);
     stroke(51);
     fill(0, 255 , 0);
-    rect(x,y,50, 20);  
+    rect(x,y,50, 20);
+    clear();  
 }
 
 //snake2
