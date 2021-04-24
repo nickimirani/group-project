@@ -15,13 +15,12 @@ function setup(){
 
 function draw(){
     //snake positions
-    snake1(snakePositionX, snakePositionY); 
-    snakePositionX = snakePositionX + 3;
+    snake1(40,40); 
+    /* snakePositionX = snakePositionX + 3;
     if (snakePositionX > 400){
         snakePositionY = snakePositionY + 3;
         snakePositionX = snakePositionX -3;
-
-    }
+    }*/
 
     snake2(100,40);
     snake3(160, 40);
@@ -29,29 +28,26 @@ function draw(){
     
     //steve position
     steve(stevePositionX,stevePositionY); 
-    if (keyIsDown(LEFT_ARROW)) {
+
+    if (keyCode === LEFT_ARROW) {
         stevePositionX -= 5;
-        clear();
-        background(51);
-    }
-    
-    if (keyIsDown(RIGHT_ARROW)) {
+        //clear();
+        //background(51);
+    }else if (keyCode === RIGHT_ARROW) {
         stevePositionX += 5;
-        clear();
-        background(51);
+        //clear();
+        //background(51);
     }
     
-    if (keyIsDown(UP_ARROW)) {
+    if (keyCode === UP_ARROW) {
         stevePositionY -= 5;
-        clear();
-        background(51);
-    }
-    
-    if (keyIsDown(DOWN_ARROW)) {
+        //clear();
+        //background(51);
+    }else if (keyCode === DOWN_ARROW) {
         stevePositionY += 5;
-        clear();
-        background(51);
-    }
+        //clear();
+        //background(51);
+    } 
     
     
    //game fence
@@ -121,8 +117,8 @@ function draw(){
  
 //player
 function steve(x,y){
-    strokeWeight(1);
-    stroke(51);
+    //strokeWeight(1);
+    //stroke(51);
     fill(255,255, 0);
     rect(x,y, 30,30,10);
     
@@ -130,28 +126,26 @@ function steve(x,y){
 
 //snake1
 function snake1(x,y){
-    //strokeWeight(1);
-    stroke(51);
+    strokeWeight(0);
     fill(0, 255 , 0);
     rect(x,y,50, 20);
-    clear();  
 }
 
 //snake2
 function snake2(x,y){
-    //strokeWeight(1);
+    strokeWeight(0);
     fill(255,0,0);
     rect(x,y,50, 20);
 }
 //snake3
 function snake3(x,y){
-    strokeWeight(1);
+    strokeWeight(0);
     fill(255 , 100 , 255);
     rect(x,y,50, 20);
 }
 //snake4
 function snake4(x,y){
-    strokeWeight(1);
+    strokeWeight(0);
     fill(0 , 0 , 255);
     rect(x,y,50, 20);
 }
