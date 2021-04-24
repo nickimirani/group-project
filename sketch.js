@@ -29,25 +29,7 @@ function draw(){
     //steve position
     steve(stevePositionX,stevePositionY); 
 
-    if (keyCode === LEFT_ARROW) {
-        stevePositionX -= 5;
-        //clear();
-        //background(51);
-    }else if (keyCode === RIGHT_ARROW) {
-        stevePositionX += 5;
-        //clear();
-        //background(51);
-    }
-    
-    if (keyCode === UP_ARROW) {
-        stevePositionY -= 5;
-        //clear();
-        //background(51);
-    }else if (keyCode === DOWN_ARROW) {
-        stevePositionY += 5;
-        //clear();
-        //background(51);
-    } 
+ 
     
     
    //game fence
@@ -148,6 +130,30 @@ function snake4(x,y){
     strokeWeight(0);
     fill(0 , 0 , 255);
     rect(x,y,50, 20);
+}
+
+function keyPressed(){
+    if (keyCode === LEFT_ARROW) {
+        stevePositionX -= 5;
+        //clear();
+        //background(51);
+    }else if (keyCode === RIGHT_ARROW) {
+        stevePositionX += 5;
+        //clear();
+        //background(51);
+    }
+    
+    else if (keyCode === UP_ARROW) {
+        stevePositionY -= 5;
+        //clear();
+        //background(51);
+    }else if (keyCode === DOWN_ARROW) {
+        stevePositionY += 5;
+        //clear();
+        //background(51);
+    } 
+    clear();
+    background(51);
 }
 
 
