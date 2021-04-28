@@ -1,7 +1,10 @@
-let snakePositionX = 40;
-let snakePositionY = 40;
+let snakePositionX = 230;
+let snakePositionY = 255;
 let stevePositionX=230;
 let stevePositionY=100;
+
+let x;
+let changeDirection;
 
 function preload(){
     
@@ -10,6 +13,8 @@ function preload(){
 function setup(){
   createCanvas(500,650);
   frameRate(15); 
+  x = 1;
+  changeDirection = false;
 }
 
 function draw(){
@@ -17,16 +22,40 @@ function draw(){
     background(51);
 
     //snake positions
-    snake1(40,40); 
-    /* snakePositionX = snakePositionX + 3;
+    snake1(snakePositionX, snakePositionY);
+    if(snakePositionX>width){
+        changeDirection=true;
+    }
+	//if the circle passes the right side, change the direction
+	//effects of direction change happen below
+	else if (snakePositionX<=0){
+		changeDirection=false;
+    }
+	//if the circle passes the left side (or becomes equal to 0)
+	//changes the direction, effects are in the next if statement below
+	
+	if (snakePositionX>=0 && changeDirection == false){
+		snakePositionX=snakePositionX+ 3;
+    }
+	//if x is greater than OR equal to 0, move right
+	else if(changeDirection == true){
+		snakePositionX=snakePositionX-3;
+    }
+
+    /*snakePositionX = snakePositionX + 3;
     if (snakePositionX > 400){
+        //turn
         snakePositionY = snakePositionY + 3;
         snakePositionX = snakePositionX -3;
+    }
+    if (snakePositionY > 400){
+        snakePositionX = snakePositionX -3;
+        snakePositionY = snakePositionY +3;
     }*/
 
-    snake2(100,40);
-    snake3(160, 40);
-    snake4(220, 40);
+    snake2(230,280);
+    snake3(230, 305);
+    snake4(230, 330);
     
     //steve position
     steve(stevePositionX,stevePositionY); 
