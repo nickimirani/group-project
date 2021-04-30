@@ -4,7 +4,7 @@ let stevePositionX=230;
 let stevePositionY=100;
 
 let x;
-let changeDirection;
+let changeDirection = false;
 
 function preload(){
     
@@ -13,8 +13,7 @@ function preload(){
 function setup(){
   createCanvas(500,650);
   frameRate(15); 
-  x = 1;
-  changeDirection = false;
+
 }
 
 function draw(){
@@ -23,35 +22,25 @@ function draw(){
 
     //snake positions
     snake1(snakePositionX, snakePositionY);
-    if(snakePositionX>width){
-        changeDirection=true;
-    }
-	//if the circle passes the right side, change the direction
-	//effects of direction change happen below
-	else if (snakePositionX<=0){
-		changeDirection=false;
-    }
-	//if the circle passes the left side (or becomes equal to 0)
-	//changes the direction, effects are in the next if statement below
-	
-	if (snakePositionX>=0 && changeDirection == false){
-		snakePositionX=snakePositionX+ 3;
-    }
-	//if x is greater than OR equal to 0, move right
-	else if(changeDirection == true){
-		snakePositionX=snakePositionX-3;
-    }
 
-    /*snakePositionX = snakePositionX + 3;
-    if (snakePositionX > 400){
-        //turn
-        snakePositionY = snakePositionY + 3;
-        snakePositionX = snakePositionX -3;
+    if (changeDirection == false){
+    snakePositionX = snakePositionX + 3;
     }
-    if (snakePositionY > 400){
-        snakePositionX = snakePositionX -3;
-        snakePositionY = snakePositionY +3;
-    }*/
+    if (changeDirection == true){
+        snakePositionY= snakePositionY - 3;
+    }
+    if (snakePositionX > 320){
+        //turn
+        //snakePositionY = snakePositionY + 3;
+        //snakePositionX = snakePositionX -3;
+        changeDirection = true;
+        //snakePositionY = snakePositionY + 3;
+    }
+    if (snakePositionY < 100){
+        //snakePositionX = snakePositionX -3;
+        //snakePositionY = snakePositionY +3;
+        changeDirection = false;
+    }
 
     snake2(230,280);
     snake3(230, 305);
@@ -59,7 +48,7 @@ function draw(){
     
     //steve position
     steve(stevePositionX,stevePositionY); 
-
+    //steve movement
     if (keyCode === LEFT_ARROW) {
         stevePositionX -= 5;
 
