@@ -3,8 +3,11 @@ let snakePositionY = 255;
 let stevePositionX=230;
 let stevePositionY=100;
 
-let x;
+let angle = 0;
 let changeDirection = false;
+
+let x = 230;
+let y = 280;
 
 function preload(){
     
@@ -13,7 +16,6 @@ function preload(){
 function setup(){
   createCanvas(500,650);
   frameRate(15); 
-
 }
 
 function draw(){
@@ -22,7 +24,6 @@ function draw(){
 
     //snake positions
     snake1(snakePositionX, snakePositionY);
-
     if (changeDirection == false){
     snakePositionX = snakePositionX + 3;
     }
@@ -34,6 +35,7 @@ function draw(){
         //snakePositionY = snakePositionY + 3;
         //snakePositionX = snakePositionX -3;
         changeDirection = true;
+        
         //snakePositionY = snakePositionY + 3;
     }
     if (snakePositionY < 100){
@@ -42,7 +44,21 @@ function draw(){
         changeDirection = false;
     }
 
-    snake2(230,280);
+    snake2(x,y);
+    if (changeDirection == false){
+        x = x + 3;
+        }
+        if (changeDirection == true){
+            y= y - 3;
+        }
+        if (x > 320){
+            //turn
+            changeDirection = true;
+        }
+        if (y < 100){
+            changeDirection = false;
+        }
+
     snake3(230, 305);
     snake4(230, 330);
     
@@ -135,14 +151,16 @@ function steve(x,y){
     //stroke(51);
     fill(255,255, 0);
     rect(x,y,30, 30,10);
-    
 }
 
 //snake1
 function snake1(x,y){
+    //push();
+    //rotate(angle);
     strokeWeight(0);
     fill(0, 255 , 0);
     rect(x,y,50, 20);
+    //pop();
 }
 
 //snake2
