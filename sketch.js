@@ -3,6 +3,9 @@ let snakePositionY = 255;
 let stevePositionX=230;
 let stevePositionY=100;
 
+let bigCoin1X = 70;
+let bigCoin1Y = 305;
+
 let angle = 0;
 let changeDirection = false;
 
@@ -15,7 +18,7 @@ function preload(){
 
 function setup(){
   createCanvas(500,650);
-  frameRate(15); 
+  frameRate(9); 
 }
 
 function draw(){
@@ -25,31 +28,31 @@ function draw(){
     //snake positions
     snake1(snakePositionX, snakePositionY);
     if (changeDirection == false){
-    snakePositionX = snakePositionX + 3;
+    snakePositionX = snakePositionX + 8;
     }
     if (changeDirection == true){
-        snakePositionY= snakePositionY - 3;
+        snakePositionY= snakePositionY - 8;
     }
     if (snakePositionX > 320){
         //turn
-        //snakePositionY = snakePositionY + 3;
-        //snakePositionX = snakePositionX -3;
+        //snakePositionY = snakePositionY + 8;
+        //snakePositionX = snakePositionX -8;
         changeDirection = true;
         
-        //snakePositionY = snakePositionY + 3;
+        //snakePositionY = snakePositionY + 8;
     }
     if (snakePositionY < 100){
-        //snakePositionX = snakePositionX -3;
-        //snakePositionY = snakePositionY +3;
+        //snakePositionX = snakePositionX -8;
+        //snakePositionY = snakePositionY +8;
         changeDirection = false;
     }
 
     snake2(x,y);
     if (changeDirection == false){
-        x = x + 3;
+        x = x + 8;
         }
         if (changeDirection == true){
-            y= y - 3;
+            y= y - 8;
         }
         if (x > 320){
             //turn
@@ -62,22 +65,35 @@ function draw(){
     snake3(230, 305);
     snake4(230, 330);
     
+    
     //steve position
     steve(stevePositionX,stevePositionY); 
     //steve movement
     if (keyCode === LEFT_ARROW) {
-        stevePositionX -= 5;
+        stevePositionX -= 14;
 
     }else if (keyCode === RIGHT_ARROW) {
-       stevePositionX += 5;
+       stevePositionX += 14;
     }
     
     if (keyCode === UP_ARROW) {
-        stevePositionY -= 5;
+        stevePositionY -= 14;
 
     }else if (keyCode === DOWN_ARROW) {
-        stevePositionY += 5;
+        stevePositionY += 14;
     } 
+
+    //when steve collects bigger coin
+  
+    if (stevePositionX === bigCoin1X && stevePositionY === bigCoin1Y) {
+        console.log("yay1");  
+    }
+    if (stevePositionX === 430 && stevePositionY === 305) {
+        console.log("yay2")  
+    }
+    if (stevePositionX === 250 && stevePositionY === 555) {
+        console.log("yay3")  
+    }
     
     
    //game fence
@@ -144,6 +160,7 @@ function draw(){
    vertex(300,250);
    endShape();
 
+   
    // coin NW corner
    coin(55,60);
    coin(55,100);
@@ -312,7 +329,8 @@ function snake4(x,y){
     fill(0 , 0 , 255);
     rect(x,y,50, 20);
 }
-//cion
+
+//coin
 function coin(x,y){
     noStroke();
     fill(255 ,182, 0);
