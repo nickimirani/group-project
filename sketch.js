@@ -89,10 +89,10 @@ function draw(){
         console.log("yay1");  
     }
     if (stevePositionX === 430 && stevePositionY === 305) {
-        console.log("yay2")  
+        console.log("yay2");  
     }
     if (stevePositionX === 250 && stevePositionY === 555) {
-        console.log("yay3")  
+        console.log("yay3");  
     }
     
     
