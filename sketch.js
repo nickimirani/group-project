@@ -107,6 +107,7 @@ function draw(){
    vertex(30, 600);
    endShape(CLOSE);
    
+   
    //"line"wall
    strokeWeight(4);
    line(30,170,100,170);
