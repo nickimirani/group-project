@@ -88,17 +88,8 @@ function draw(){
         stevePositionY += 5;
     } //14
 
-    //when steve collects bigger coin
-
-    if (stevePositionX === bigCoin1X && stevePositionY === bigCoin1Y) {
-        noLoop();
-    }
-    if (stevePositionX === 430 && stevePositionY === 305) {
-        console.log("yay2");  
-    }
-    if (stevePositionX === 250 && stevePositionY === 555) {
-        console.log("yay3");  
-    }
+    
+    
 
    
     //so steve doesn't move outside of the canvas
@@ -309,6 +300,8 @@ function draw(){
    coin(380,575);
    coin(340,540);
    coin(340,575);
+
+   
    
    //  Big coin 
    Bigcoin(70,305);
@@ -364,6 +357,19 @@ function coin(x,y){
 
 //Bigcion
 function Bigcoin(x,y){
+
+    let bigCoin1;
     fill(255 ,215, 0);
     ellipse(x,y,15,15);
+
+    //when steve collects bigger coin
+    if (stevePositionX === 70 && stevePositionY === 305) {
+        noLoop();
+    }
+    if (stevePositionX === 430 && stevePositionY === 305) {
+        console.log("yay2");  
+    }
+    if (stevePositionX === 250 && stevePositionY === 555) {
+        console.log("yay3");  
+    }
 }
