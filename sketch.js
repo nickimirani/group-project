@@ -31,7 +31,7 @@ function draw(){
     //snake positions
     snake1(snakePositionX, snakePositionY);
     if (changeDirection == false){
-    snakePositionX = snakePositionX + 8;
+        snakePositionX = snakePositionX + 8;
     }
     if (changeDirection == true){
         snakePositionY= snakePositionY - 8;
