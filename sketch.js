@@ -90,9 +90,8 @@ function draw(){
 
     //when steve collects bigger coin
 
-  
     if (stevePositionX === bigCoin1X && stevePositionY === bigCoin1Y) {
-        console.log("yay1");
+        noLoop();
     }
     if (stevePositionX === 430 && stevePositionY === 305) {
         console.log("yay2");  
@@ -103,17 +102,17 @@ function draw(){
 
    
     //so steve doesn't move outside of the canvas
-    if(stevePositionX < 30){
-        stevePositionX = 30;
+    if(stevePositionX < 45){
+        stevePositionX = 45;
     }
-    if(stevePositionX > 440){
-        stevePositionX = 440;
+    if(stevePositionX > 455){
+        stevePositionX = 455;
     }
-    if(stevePositionY < 30){
-        stevePositionY = 30;
+    if(stevePositionY < 45){
+        stevePositionY = 45;
     }
-    if(stevePositionY > 565){
-        stevePositionY = 565;
+    if(stevePositionY > 585){
+        stevePositionY = 585;
     }
     
 
