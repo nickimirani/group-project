@@ -21,7 +21,7 @@ function preload(){
 
 function setup(){
   createCanvas(500,650);
-  frameRate(9); 
+  frameRate(10); 
 }
 
 function draw(){
@@ -69,24 +69,27 @@ function draw(){
     snake4(230, 330);
     
     
-    //steve position
+    //steve start position
     steve(stevePositionX,stevePositionY); 
+    
+    
     //steve movement
     if (keyCode === LEFT_ARROW) {
-        stevePositionX -= 14;
-
+        stevePositionX -= 5;
+        
     }else if (keyCode === RIGHT_ARROW) {
-       stevePositionX += 14;
+       stevePositionX += 5;
     }
     
     if (keyCode === UP_ARROW) {
-        stevePositionY -= 14;
+        stevePositionY -= 5;
 
     }else if (keyCode === DOWN_ARROW) {
-        stevePositionY += 14;
-    } 
+        stevePositionY += 5;
+    } //14
 
     //when steve collects bigger coin
+
   
     if (stevePositionX === bigCoin1X && stevePositionY === bigCoin1Y) {
         console.log("yay1");
@@ -94,6 +97,10 @@ function draw(){
         steveY.push(bigCoin1Y);
         ellipse();
         
+
+    if (stevePositionX === 70 && stevePositionY === 305) {
+        noLoop();
+
     }
     if (stevePositionX === 430 && stevePositionY === 305) {
         console.log("yay2");  
@@ -102,7 +109,25 @@ function draw(){
         console.log("yay3");  
     }
 
+
     //When steve collects smaller coin 
+
+
+    
+    //so steve doesn't move outside of the canvas
+    if(stevePositionX < 30){
+        stevePositionX = 30;
+    }
+    if(stevePositionX > 440){
+        stevePositionX = 440;
+    }
+    if(stevePositionY < 30){
+        stevePositionY = 30;
+    }
+    if(stevePositionY > 565){
+        stevePositionY = 565;
+    }
+    
 
     
     
@@ -301,7 +326,8 @@ function draw(){
    //  Big coin 
    Bigcoin(70,305);
    Bigcoin(430,305);
-   Bigcoin(250,555);   
+   Bigcoin(250,555);  
+
 }
  
 //player
@@ -309,7 +335,9 @@ function steve(x,y){
     //strokeWeight(1);
     //stroke(51);
     fill(255,255, 0);
-    rect(x,y,30, 30,10);
+    //rect(x,y,30, 30,10);
+   rect(x,y,30,30,10);
+   rectMode(CENTER);
 }
 
 //snake1
@@ -352,6 +380,7 @@ function Bigcoin(x,y){
     fill(255 ,215, 0);
     ellipse(x,y,15,15);
 }
+
 
 
 
