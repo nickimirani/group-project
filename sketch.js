@@ -103,20 +103,20 @@ function draw(){
 
    
     //so steve doesn't move outside of the canvas
-    if(stevePositionX < 30){
-        stevePositionX = 30;
+    if(stevePositionX < 50){
+        stevePositionX = 50;
     }
-    if(stevePositionX > 440){
-        stevePositionX = 440;
+    if(stevePositionX > 445){
+        stevePositionX = 445;
     }
-    if(stevePositionY < 30){
-        stevePositionY = 30;
+    if(stevePositionY < 60){
+        stevePositionY = 60;
     }
-    if(stevePositionY > 565){
-        stevePositionY = 565;
+    if(stevePositionY > 575){
+        stevePositionY = 575;
     }
     
-
+    
     
     
    //game fence
