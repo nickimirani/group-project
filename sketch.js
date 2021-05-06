@@ -89,7 +89,7 @@ function draw(){
     //when steve collects bigger coin
 
     if (stevePositionX === bigCoin1X && stevePositionY === bigCoin1Y) {
-        noLoop();
+        console.log("yay1");
     }
     if (stevePositionX === 430 && stevePositionY === 305) {
         console.log("yay2");  
