@@ -12,8 +12,19 @@ let changeDirection = false;
 let x = 230;
 let y = 280;
 
-let steveX=[];
-let steveY=[];
+let coins=[coin(55,60),coin(55,100),coin(55,140),coin(85,60),coin(85,100),coin(85,140),coin(120,60),coin(160,60),coin(150,120),coin(150,160),coin(200,60),
+coin(200,120),coin(235,60),coin(235,160),coin(235,200),coin(270,60),coin(270,160),coin(270,200),coin(300,60),coin(300,120),coin(445,60),coin(445,100),coin(445,140),
+coin(415,60),coin(415,100),coin(415,140),coin(380,60),coin(340,60),coin(350,120),coin(350,160),coin(55,200),coin(55,250),coin(55,360),coin(55,410),
+coin(85,200),coin(85,250),coin(85,360),coin(85,410),coin(150,200),coin(150,240),coin(150,280),coin(150,330),coin(150,370),coin(150,410),coin(235,245),
+coin(235,285),coin(235,325),coin(235,365),coin(270,245),coin(270,285),coin(270,325),coin(270,365),coin(445,200),coin(445,250),coin(445,360),coin(445,410),
+coin(415,200),coin(415,250),coin(415,360),coin(415,410),coin(350,200),coin(350,240),coin(350,280),coin(350,330),coin(350,370),coin(350,410),coin(55,470),
+coin(55,505),coin(55,540),coin(55,575),coin(85,470),coin(85,505),coin(85,540),coin(85,575),coin(150,450),coin(150,490),coin(120,540),coin(120,575),coin(160,540),coin(160,575),
+coin(200,410),coin(200,490),coin(200,540),coin(200,575),coin(235,410),coin(235,450),coin(235,490),coin(270,410),coin(270,450),coin(270,490),coin(300,410),
+coin(300,490),coin(300,540),coin(300,575),coin(445,470),coin(445,505),coin(445,540),coin(445,575),coin(415,470),coin(415,505),coin(415,540),coin(415,575),coin(350,450),
+coin(350,490),coin(380,540),coin(380,575),coin(340,540),coin(340,575)];
+
+let bigcoins=[Bigcoin(70,305),Bigcoin(430,305),Bigcoin(250,555)];
+
 
 function preload(){
     
@@ -90,23 +101,36 @@ function draw(){
 
     
     
+    //when steve collects bigger coin
+
+    if (stevePositionX === bigCoin1X && stevePositionY === bigCoin1Y) {
+        console.log("yay1");
+    }
+    if (stevePositionX === 430 && stevePositionY === 305) {
+        console.log("yay2");  
+    }
+    if (stevePositionX === 250 && stevePositionY === 555) {
+        console.log("yay3");  
+    }
 
    
     //so steve doesn't move outside of the canvas
-    if(stevePositionX < 45){
-        stevePositionX = 45;
+
+    if(stevePositionX < 50){
+        stevePositionX = 50;
     }
-    if(stevePositionX > 455){
-        stevePositionX = 455;
+    if(stevePositionX > 445){
+        stevePositionX = 445;
     }
-    if(stevePositionY < 45){
-        stevePositionY = 45;
+    if(stevePositionY < 60){
+        stevePositionY = 60;
     }
-    if(stevePositionY > 585){
-        stevePositionY = 585;
+    if(stevePositionY > 575){
+        stevePositionY = 575;
+
     }
     
-
+    
     
     
    //game fence
