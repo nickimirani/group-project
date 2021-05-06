@@ -327,7 +327,6 @@ function draw(){
    Bigcoin(70,305);
    Bigcoin(430,305);
    Bigcoin(250,555);  
-
 }
  
 //player
@@ -375,14 +374,10 @@ function coin(x,y){
     fill(255 ,182, 0);
     ellipse(x,y,10,10);
 }
+
 //Bigcion
 function Bigcoin(x,y){
     fill(255 ,215, 0);
     ellipse(x,y,15,15);
 }
-
-
-
-
-
-
+}
