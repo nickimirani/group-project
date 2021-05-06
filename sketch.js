@@ -12,6 +12,9 @@ let changeDirection = false;
 let x = 230;
 let y = 280;
 
+let steveX=[];
+let steveY=[];
+
 function preload(){
     
 }
@@ -86,7 +89,11 @@ function draw(){
     //when steve collects bigger coin
   
     if (stevePositionX === bigCoin1X && stevePositionY === bigCoin1Y) {
-        console.log("yay1");  
+        console.log("yay1");
+        steveX.push(bigCoin1X);
+        steveY.push(bigCoin1Y);
+        ellipse();
+        
     }
     if (stevePositionX === 430 && stevePositionY === 305) {
         console.log("yay2");  
@@ -94,6 +101,9 @@ function draw(){
     if (stevePositionX === 250 && stevePositionY === 555) {
         console.log("yay3");  
     }
+
+    //When steve collects smaller coin 
+
     
     
    //game fence
