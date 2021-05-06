@@ -93,14 +93,6 @@ function draw(){
   
     if (stevePositionX === bigCoin1X && stevePositionY === bigCoin1Y) {
         console.log("yay1");
-        steveX.push(bigCoin1X);
-        steveY.push(bigCoin1Y);
-        ellipse();
-        
-
-    if (stevePositionX === 70 && stevePositionY === 305) {
-        noLoop();
-
     }
     if (stevePositionX === 430 && stevePositionY === 305) {
         console.log("yay2");  
@@ -109,11 +101,7 @@ function draw(){
         console.log("yay3");  
     }
 
-
-    //When steve collects smaller coin 
-
-
-    
+   
     //so steve doesn't move outside of the canvas
     if(stevePositionX < 30){
         stevePositionX = 30;
@@ -379,5 +367,4 @@ function coin(x,y){
 function Bigcoin(x,y){
     fill(255 ,215, 0);
     ellipse(x,y,15,15);
-}
 }
