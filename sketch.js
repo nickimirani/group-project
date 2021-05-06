@@ -102,7 +102,7 @@ function draw(){
 
    
     //so steve doesn't move outside of the canvas
-<<<<<<< HEAD
+
     if(stevePositionX < 50){
         stevePositionX = 50;
     }
@@ -114,19 +114,7 @@ function draw(){
     }
     if(stevePositionY > 575){
         stevePositionY = 575;
-=======
-    if(stevePositionX < 45){
-        stevePositionX = 45;
-    }
-    if(stevePositionX > 455){
-        stevePositionX = 455;
-    }
-    if(stevePositionY < 45){
-        stevePositionY = 45;
-    }
-    if(stevePositionY > 585){
-        stevePositionY = 585;
->>>>>>> 2c26784c59182247ba9048454984373722e3c95b
+
     }
     
     
