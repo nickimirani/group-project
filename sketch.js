@@ -12,8 +12,6 @@ let changeDirection = false;
 let x = 230;
 let y = 280;
 
-let steveX=[];
-let steveY=[];
 
 function preload(){
     
