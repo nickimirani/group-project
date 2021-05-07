@@ -112,7 +112,7 @@ function draw(){
     //if player and snake collide
 
      if (snakePositionX === stevePositionX && snakePositionY === stevePositionY){
-        console.log("collision")
+        console.log("collision");
     }
 
     
@@ -172,16 +172,7 @@ function draw(){
             // r1 bottom edge past r2 top   
        {    
             
-           redraw();
-     
-       }
-<<<<<<< HEAD
-     }
-=======
-     };*/
-
- 
->>>>>>> 0c07ef4d61468db4033d71bcaf4aea5330d98d54
+           redraw();*/
     
     
     
