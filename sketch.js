@@ -6,6 +6,9 @@ let stevePositionY=100;
 let bigCoin1X = 70;
 let bigCoin1Y = 305;
 
+let snakes;
+let speed = 10;
+
 let angle = 0;
 let changeDirection = false;
 
@@ -32,7 +35,7 @@ function preload(){
 
 function setup(){
   createCanvas(500,650);
-  frameRate(10); 
+  frameRate(speed); 
 }
 
 function draw(){
@@ -41,11 +44,14 @@ function draw(){
 
     //snake positions
     snake1(snakePositionX, snakePositionY);
+    
     if (changeDirection == false){
-        snakePositionX = snakePositionX + 8;
+        push();
+        snakePositionX = snakePositionX - 3;
+        pop();
     }
     if (changeDirection == true){
-        snakePositionY= snakePositionY - 8;
+        snakePositionY= snakePositionY - 3;
     }
     if (snakePositionX > 320){
         //turn
@@ -61,12 +67,12 @@ function draw(){
         changeDirection = false;
     }
 
-    snake2(x,y);
+    snake2(snakePositionX, snakePositionY);
     if (changeDirection == false){
-        x = x + 8;
+        x = x + 3;
         }
         if (changeDirection == true){
-            y= y - 8;
+            y= y - 3;
         }
         if (x > 320){
             //turn
@@ -76,8 +82,8 @@ function draw(){
             changeDirection = false;
         }
 
-    snake3(230, 305);
-    snake4(230, 330);
+    snake3(snakePositionX, snakePositionY);
+    snake4(snakePositionX, snakePositionY);
     
     
     //steve start position
@@ -103,31 +109,43 @@ function draw(){
     
     //when steve collects bigger coin
 
-    if (stevePositionX === bigCoin1X && stevePositionY === bigCoin1Y) {
+   /* if (stevePositionX === bigCoin1X && stevePositionY === bigCoin1Y) {
         console.log("yay1");
+        
     }
     if (stevePositionX === 430 && stevePositionY === 305) {
         console.log("yay2");  
     }
     if (stevePositionX === 250 && stevePositionY === 555) {
         console.log("yay3");  
-    }
+    }*/
 
    
-    //so steve doesn't move outside of the canvas
+    //so steve & snakes doesn't move outside of the canvas
 
-    if(stevePositionX < 50){
-        stevePositionX = 50;
+    if(stevePositionX < 60){
+        stevePositionX = 60;
+    }
+    if(snakePositionX < 60){
+        snakePositionX = 60;
     }
     if(stevePositionX > 445){
         stevePositionX = 445;
     }
+    if(snakePositionX > 445){
+        snakePositionX = 445;
+    }
     if(stevePositionY < 60){
         stevePositionY = 60;
     }
+    if(snakePositionY < 60){
+        snakePositionY = 60;
+    }
     if(stevePositionY > 575){
         stevePositionY = 575;
-
+    }
+    if(snakePositionY > 575){
+        snakePositionY = 575;
     }
     
     
@@ -387,8 +405,9 @@ function Bigcoin(x,y){
     ellipse(x,y,15,15);
 
     //when steve collects bigger coin
-    if (stevePositionX === 70 && stevePositionY === 305) {
-        noLoop();
+    if (stevePositionX === 70 && stevePositionY === 305 && speed === 10) {
+        speed = 1;
+        console.log("yay")
     }
     if (stevePositionX === 430 && stevePositionY === 305) {
         console.log("yay2");  
