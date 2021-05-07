@@ -349,16 +349,16 @@ function draw(){
    Bigcoin(250,555); 
     
    //big coin 1
-   //fill(255 ,215, 0);
-   //ellipse(70,305,15,15);
+   /*fill(255 ,215, 0);
+   ellipse(70,305,15,15);
 
    //big coin 2
-   //fill(255 ,215, 0);
-   //ellipse(430,305,15,15);
+   fill(255 ,215, 0);
+   ellipse(430,305,15,15);
 
    //big coin 3
-   //fill(255 ,215, 0);
-   //ellipse(250,555,15,15);
+   fill(255 ,215, 0);
+   ellipse(250,555,15,15);*/
    
    
 }
@@ -415,4 +415,17 @@ function Bigcoin(x,y){
     fill(255 ,215, 0);
 
     ellipse(x,y,15,15);
+
+    //when steve collects bigger coin
+    if (stevePositionX === 70 && stevePositionY === 305) {
+        speed = 1;
+        console.log("yay");
+    }
+    fill(200,200,0);
+    if (stevePositionX === 430 && stevePositionY === 305) {
+        console.log("yay2");  
+    }
+    if (stevePositionX === 250 && stevePositionY === 555) {
+        console.log("yay3");  
+    }
 }
