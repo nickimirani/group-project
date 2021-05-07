@@ -44,8 +44,13 @@ function draw(){
 
     //snake positions
     snake1(snakePositionX, snakePositionY);
+
+
     
-    if (changeDirection == false){
+        snakePositionX = snakePositionX + 3;
+    
+    
+    /*if (changeDirection == false){
         snakePositionX = snakePositionX - 3;
     }
     if (changeDirection == true){
@@ -63,10 +68,10 @@ function draw(){
         //snakePositionX = snakePositionX -8;
         //snakePositionY = snakePositionY +8;
         changeDirection = false;
-    }
+    }*/
 
     snake2(snakePositionX, snakePositionY);
-    if (changeDirection == false){
+    /*if (changeDirection == false){
         x = x + 3;
         }
         if (changeDirection == true){
@@ -79,7 +84,7 @@ function draw(){
         if (y < 100){
             changeDirection = false;
         }
-
+*/
     snake3(snakePositionX, snakePositionY);
     snake4(snakePositionX, snakePositionY);
     
@@ -102,6 +107,13 @@ function draw(){
     }else if (keyCode === DOWN_ARROW) {
         stevePositionY += 5;
     } //14
+
+    
+    //if player and snake collide
+
+     if (snakePositionX === stevePositionX && snakePositionY === stevePositionY){
+        console.log("collision")
+    }
 
     
     
@@ -148,7 +160,7 @@ function draw(){
     
 
     //Gameover(check the hit box about steve and snake)
-    function collideRectRect(stevePositionX, stevePositionY, w, h, snakePositionX, snakePositionY, w2, h2) {
+    /*function collideRectRect(stevePositionX, stevePositionY, w, h, snakePositionX, snakePositionY, w2, h2) {
         if ( 
            stevePositionX + w >= snakePositionX &&    
             // r1 right edge past r2 left
@@ -163,7 +175,9 @@ function draw(){
            redraw();
      
        }
-     };
+     };*/
+
+ 
     
     
     
@@ -385,10 +399,10 @@ function draw(){
 function steve(x,y){
     //strokeWeight(1);
     //stroke(51);
+    rectMode(CENTER);
     fill(255,255, 0);
     //rect(x,y,30, 30,10);
    rect(x,y,30,30,10);
-   rectMode(CENTER);
 }
 
 //snake1
@@ -397,7 +411,8 @@ function snake1(x,y){
     //rotate(angle);
     strokeWeight(0);
     fill(0, 255 , 0);
-    rect(x,y,50, 20);
+    //rect(x,y,50, 20);
+    rect(x,y,30, 30);
     //pop();
 }
 
@@ -405,19 +420,22 @@ function snake1(x,y){
 function snake2(x,y){
     strokeWeight(0);
     fill(255,0,0);
-    rect(x,y,50, 20);
+    //rect(x,y,50, 20);
+    rect(x,y,30, 30);
 }
 //snake3
 function snake3(x,y){
     strokeWeight(0);
     fill(255 , 100 , 255);
-    rect(x,y,50, 20);
+    //rect(x,y,50, 20);
+    rect(x,y,30, 30);
 }
 //snake4
 function snake4(x,y){
     strokeWeight(0);
     fill(0 , 0 , 255);
-    rect(x,y,50, 20);
+    //rect(x,y,50, 20);
+    rect(x,y,30, 30);
 }
 
 //coin
