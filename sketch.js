@@ -146,6 +146,24 @@ function draw(){
         snakePositionY = 575;
     }
     
+
+    //Gameover(check the hit box about steve and snake)
+    function collideRectRect(stevePositionX, stevePositionY, w, h, snakePositionX, snakePositionY, w2, h2) {
+        if ( 
+           stevePositionX + w >= snakePositionX &&    
+            // r1 right edge past r2 left
+           stevePositionX <= snakePositionX + w2 &&    
+            // r1 left edge past r2 right
+           stevePositionY + h >= snakePositionY &&    
+            // r1 top edge past r2 bottom
+           stevePositionY <= snakePositionY + h2)     
+            // r1 bottom edge past r2 top   
+       {    
+            
+           redraw();
+     
+       }
+     };
     
     
     
