@@ -46,9 +46,7 @@ function draw(){
     snake1(snakePositionX, snakePositionY);
     
     if (changeDirection == false){
-        push();
         snakePositionX = snakePositionX - 3;
-        pop();
     }
     if (changeDirection == true){
         snakePositionY= snakePositionY - 3;
@@ -348,7 +346,21 @@ function draw(){
    //  Big coin 
    Bigcoin(70,305);
    Bigcoin(430,305);
-   Bigcoin(250,555);  
+   Bigcoin(250,555); 
+    
+   //big coin 1
+   //fill(255 ,215, 0);
+   //ellipse(70,305,15,15);
+
+   //big coin 2
+   //fill(255 ,215, 0);
+   //ellipse(430,305,15,15);
+
+   //big coin 3
+   //fill(255 ,215, 0);
+   //ellipse(250,555,15,15);
+   
+   
 }
  
 //player
@@ -400,19 +412,7 @@ function coin(x,y){
 //Bigcion
 function Bigcoin(x,y){
 
-    let bigCoin1;
     fill(255 ,215, 0);
-    ellipse(x,y,15,15);
 
-    //when steve collects bigger coin
-    if (stevePositionX === 70 && stevePositionY === 305 && speed === 10) {
-        speed = 1;
-        console.log("yay");
-    }
-    if (stevePositionX === 430 && stevePositionY === 305) {
-        console.log("yay2");  
-    }
-    if (stevePositionX === 250 && stevePositionY === 555) {
-        console.log("yay3");  
-    }
+    ellipse(x,y,15,15);
 }
