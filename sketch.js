@@ -407,7 +407,7 @@ function Bigcoin(x,y){
     //when steve collects bigger coin
     if (stevePositionX === 70 && stevePositionY === 305 && speed === 10) {
         speed = 1;
-        console.log("yay")
+        console.log("yay");
     }
     if (stevePositionX === 430 && stevePositionY === 305) {
         console.log("yay2");  
