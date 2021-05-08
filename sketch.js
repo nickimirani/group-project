@@ -160,7 +160,7 @@ function draw(){
     
 
     //Gameover(check the hit box about steve and snake)
-    /*function collideRectRect(stevePositionX, stevePositionY, w, h, snakePositionX, snakePositionY, w2, h2) {
+    function collideRectRect(stevePositionX, stevePositionY, w, h, snakePositionX, snakePositionY, w2, h2) {
         if ( 
            stevePositionX + w >= snakePositionX &&    
             // r1 right edge past r2 left
@@ -172,8 +172,9 @@ function draw(){
             // r1 bottom edge past r2 top   
        {    
             
-           redraw();*/
-    
+           redraw();
+        }
+    }
     
     
    //game fence
