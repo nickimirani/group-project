@@ -276,7 +276,7 @@ function draw(){
         stevePositionY=200;
     }
     if(stevePositionX>370 && stevePositionX<410 && stevePositionY<410 && stevePositionY>390){
-        stevePositionY=410;
+        stevePositionY=410
     }
   
 
