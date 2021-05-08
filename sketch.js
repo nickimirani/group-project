@@ -251,6 +251,33 @@ function draw(){
     if(stevePositionX>280 && stevePositionX<320 && stevePositionY<490 && stevePositionY>470){
         stevePositionY=490;
     }
+
+    //Make sure player does not go through the walls(long vertical line)
+    if(stevePositionX>90 && stevePositionX<110 && stevePositionY>220 && stevePositionY<390){
+        stevePositionX=90;
+    }
+    if(stevePositionX>110 && stevePositionX<130 && stevePositionY>220 && stevePositionY<390){
+        stevePositionX=130;
+    }
+    if(stevePositionX>90 && stevePositionX<130 && stevePositionY>200 && stevePositionY<220){
+        stevePositionY=200;
+    }
+    if(stevePositionX>90 && stevePositionX<130 && stevePositionY<410 && stevePositionY>390){
+        stevePositionY=410;
+    }
+
+    if(stevePositionX>370 && stevePositionX<390 && stevePositionY>220 && stevePositionY<390){
+        stevePositionX=370;
+    }
+    if(stevePositionX>390 && stevePositionX<410 && stevePositionY>220 && stevePositionY<390){
+        stevePositionX=410;
+    }
+    if(stevePositionX>370 && stevePositionX<410 && stevePositionY>200 && stevePositionY<220){
+        stevePositionY=200;
+    }
+    if(stevePositionX>370 && stevePositionX<410 && stevePositionY<410 && stevePositionY>390){
+        stevePositionY=410;
+    }
   
 
 
