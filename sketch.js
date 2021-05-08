@@ -159,6 +159,7 @@ function draw(){
     }
 
     //Make sure player does not go through the walls(horizontal line)
+    //First horizontal line
     if(stevePositionX<100 && stevePositionY>140 && stevePositionY<170){
         stevePositionY=140;
     }
@@ -168,7 +169,7 @@ function draw(){
     if(stevePositionX<100 && stevePositionY<200 && stevePositionY>170){
         stevePositionY=200;
     }
-
+    //Second horizontal line
     if(stevePositionX>400 && stevePositionY>140 && stevePositionY<170){
         stevePositionY=140;
     }
@@ -178,7 +179,7 @@ function draw(){
     if(stevePositionX>400 && stevePositionY<200 && stevePositionY>170){
         stevePositionY=200;
     }
-
+    //Third horizontal line 
     if(stevePositionX<100 && stevePositionY>410 && stevePositionY<440){
         stevePositionY=410;
     }
@@ -188,7 +189,7 @@ function draw(){
     if(stevePositionX<100 && stevePositionY<470 && stevePositionY>440){
         stevePositionY=470;
     }
-
+    //Fourth horizontal line
     if(stevePositionX>400 && stevePositionY>410 && stevePositionY<440){
         stevePositionY=410;
     }
@@ -200,6 +201,7 @@ function draw(){
     }
 
     //Make sure player does not go through the walls(short vertical line)
+    //First short vertical line
     if(stevePositionX>180 && stevePositionX<200 && stevePositionY>150 && stevePositionY<180){
         stevePositionX=180;
     }
@@ -212,7 +214,7 @@ function draw(){
     if(stevePositionX>180 && stevePositionX<220 && stevePositionY<200 && stevePositionY>180){
         stevePositionY=200;
     }
-
+    //Second short vertical line
     if(stevePositionX>280 && stevePositionX<300 && stevePositionY>150 && stevePositionY<180){
         stevePositionX=280;
     }
@@ -225,7 +227,7 @@ function draw(){
     if(stevePositionX>280 && stevePositionX<320 && stevePositionY<200 && stevePositionY>180){
         stevePositionY=200;
     }
-
+    //Third short vertical line
     if(stevePositionX>180 && stevePositionX<200 && stevePositionY>440 && stevePositionY<470){
         stevePositionX=180;
     }
@@ -238,7 +240,7 @@ function draw(){
     if(stevePositionX>180 && stevePositionX<220 && stevePositionY<490 && stevePositionY>470){
         stevePositionY=490;
     }
-
+    //Fourth short vertical line
     if(stevePositionX>280 && stevePositionX<300 && stevePositionY>440 && stevePositionY<470){
         stevePositionX=280;
     }
@@ -253,6 +255,7 @@ function draw(){
     }
 
     //Make sure player does not go through the walls(long vertical line)
+    //First long vertical line
     if(stevePositionX>90 && stevePositionX<110 && stevePositionY>220 && stevePositionY<390){
         stevePositionX=90;
     }
@@ -265,7 +268,7 @@ function draw(){
     if(stevePositionX>90 && stevePositionX<130 && stevePositionY<410 && stevePositionY>390){
         stevePositionY=410;
     }
-
+    //Second long vertical line
     if(stevePositionX>370 && stevePositionX<390 && stevePositionY>220 && stevePositionY<390){
         stevePositionX=370;
     }
@@ -280,7 +283,82 @@ function draw(){
     }
 
     // //Make sure player does not go through the walls("L"shape)
-  
+    //First "L"shape
+    if(stevePositionX>90 && stevePositionX<110 && stevePositionY>90 && stevePositionY<110){
+        stevePositionX=90;
+    }
+    if(stevePositionX>110 && stevePositionX<130 && stevePositionY>90 && stevePositionY<110){
+        stevePositionX=130;
+    }
+    if(stevePositionX>90 && stevePositionX<130 && stevePositionY<130 && stevePositionY>110){
+        stevePositionY=130;
+    }
+    if(stevePositionX>110 && stevePositionX<180 && stevePositionY>70 && stevePositionY<95){
+        stevePositionY=70;
+    }
+    if(stevePositionX>170 && stevePositionX<190 && stevePositionY==90){
+        stevePositionX=190;
+    }
+    if(stevePositionX>110 && stevePositionX<180 && stevePositionY>95 && stevePositionY<120){
+        stevePositionY=120;
+    }
+    //Second "L"shape
+    if(stevePositionX>90 && stevePositionX<110 && stevePositionY>500 && stevePositionY<520){
+        stevePositionX=90;
+    }
+    if(stevePositionX>110 && stevePositionX<130 && stevePositionY>500 && stevePositionY<520){
+        stevePositionX=130;
+    }
+    if(stevePositionX>90 && stevePositionX<130 && stevePositionY<500 && stevePositionY>480){
+        stevePositionY=480;
+    }
+    if(stevePositionX>110 && stevePositionX<180 && stevePositionY>495 && stevePositionY<520){
+        stevePositionY=495;
+    }
+    if(stevePositionX>170 && stevePositionX<190 && stevePositionY==520){
+        stevePositionX=190;
+    }
+    if(stevePositionX>110 && stevePositionX<180 && stevePositionY>520 && stevePositionY<540){
+        stevePositionY=540;
+    }
+    //Third "L"shape
+    if(stevePositionX>370 && stevePositionX<390 && stevePositionY>90 && stevePositionY<110){
+        stevePositionX=370;
+    }
+    if(stevePositionX>390 && stevePositionX<410 && stevePositionY>90 && stevePositionY<110){
+        stevePositionX=410;
+    }
+    if(stevePositionX>370 && stevePositionX<410 && stevePositionY<130 && stevePositionY>110){
+        stevePositionY=130;
+    }
+    if(stevePositionX>320 && stevePositionX<390 && stevePositionY>70 && stevePositionY<95){
+        stevePositionY=70;
+    }
+    if(stevePositionX>310 && stevePositionX<330 && stevePositionY==90){
+        stevePositionX=310;
+    }
+    if(stevePositionX>320 && stevePositionX<390 && stevePositionY>95 && stevePositionY<120){
+        stevePositionY=120;
+    }
+    //Forth "L" shape
+    if(stevePositionX>370 && stevePositionX<390 && stevePositionY>500 && stevePositionY<520){
+        stevePositionX=370;
+    }
+    if(stevePositionX>390 && stevePositionX<410 && stevePositionY>500 && stevePositionY<520){
+        stevePositionX=410;
+    }
+    if(stevePositionX>370 && stevePositionX<410 && stevePositionY<500 && stevePositionY>480){
+        stevePositionY=480;
+    }
+    if(stevePositionX>320 && stevePositionX<390 && stevePositionY>495 && stevePositionY<520){
+        stevePositionY=495;
+    }
+    if(stevePositionX>310 && stevePositionX<330 && stevePositionY==520){
+        stevePositionX=310;
+    }
+    if(stevePositionX>320 && stevePositionX<390 && stevePositionY>520 && stevePositionY<540){
+        stevePositionY=540;
+    }
 
 
     
