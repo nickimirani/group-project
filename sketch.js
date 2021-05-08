@@ -158,7 +158,7 @@ function draw(){
         snakePositionY = 575;
     }
 
-    //Make sure player does not go through the walls(line)
+    //Make sure player does not go through the walls(horizontal line)
     if(stevePositionX<100 && stevePositionY>140 && stevePositionY<170){
         stevePositionY=140;
     }
@@ -178,6 +178,83 @@ function draw(){
     if(stevePositionX>400 && stevePositionY<200 && stevePositionY>170){
         stevePositionY=200;
     }
+
+    if(stevePositionX<100 && stevePositionY>410 && stevePositionY<440){
+        stevePositionY=410;
+    }
+    if(stevePositionX<120 && stevePositionY==440){
+        stevePositionX=120;
+    }
+    if(stevePositionX<100 && stevePositionY<470 && stevePositionY>440){
+        stevePositionY=470;
+    }
+
+    if(stevePositionX>400 && stevePositionY>410 && stevePositionY<440){
+        stevePositionY=410;
+    }
+    if(stevePositionX>380 && stevePositionY==440){
+        stevePositionX=380;
+    }
+    if(stevePositionX>400 && stevePositionY<470 && stevePositionY>440){
+        stevePositionY=470;
+    }
+
+    //Make sure player does not go through the walls(short vertical line)
+    if(stevePositionX>180 && stevePositionX<200 && stevePositionY>150 && stevePositionY<180){
+        stevePositionX=180;
+    }
+    if(stevePositionX>200 && stevePositionX<220 && stevePositionY>150 && stevePositionY<180){
+        stevePositionX=220;
+    }
+    if(stevePositionX>180 && stevePositionX<220 && stevePositionY>130 && stevePositionY<150){
+        stevePositionY=130;
+    }
+    if(stevePositionX>180 && stevePositionX<220 && stevePositionY<200 && stevePositionY>180){
+        stevePositionY=200;
+    }
+
+    if(stevePositionX>280 && stevePositionX<300 && stevePositionY>150 && stevePositionY<180){
+        stevePositionX=280;
+    }
+    if(stevePositionX>300 && stevePositionX<320 && stevePositionY>150 && stevePositionY<180){
+        stevePositionX=320;
+    }
+    if(stevePositionX>280 && stevePositionX<320 && stevePositionY>130 && stevePositionY<150){
+        stevePositionY=130;
+    }
+    if(stevePositionX>280 && stevePositionX<320 && stevePositionY<200 && stevePositionY>180){
+        stevePositionY=200;
+    }
+
+    if(stevePositionX>180 && stevePositionX<200 && stevePositionY>440 && stevePositionY<470){
+        stevePositionX=180;
+    }
+    if(stevePositionX>200 && stevePositionX<220 && stevePositionY>440 && stevePositionY<470){
+        stevePositionX=220;
+    }
+    if(stevePositionX>180 && stevePositionX<220 && stevePositionY>420 && stevePositionY<440){
+        stevePositionY=420;
+    }
+    if(stevePositionX>180 && stevePositionX<220 && stevePositionY<490 && stevePositionY>470){
+        stevePositionY=490;
+    }
+
+    if(stevePositionX>280 && stevePositionX<300 && stevePositionY>440 && stevePositionY<470){
+        stevePositionX=280;
+    }
+    if(stevePositionX>300 && stevePositionX<320 && stevePositionY>440 && stevePositionY<470){
+        stevePositionX=320;
+    }
+    if(stevePositionX>280 && stevePositionX<320 && stevePositionY>420 && stevePositionY<440){
+        stevePositionY=420;
+    }
+    if(stevePositionX>280 && stevePositionX<320 && stevePositionY<490 && stevePositionY>470){
+        stevePositionY=490;
+    }
+  
+
+
+    
     
 
     //Gameover(check the hit box about steve and snake)
@@ -210,18 +287,23 @@ function draw(){
    endShape(CLOSE);
    
    
-   //"line"wall
+   //"horizontal line"wall
    strokeWeight(4);
    line(30,170,100,170);
    line(400,170,470,170);
    line(30,440,100,440);
    line(400,440,470,440);
-   line(110,220,110,390);
-   line(390,220,390,390);
+
+   //short vertical line wall
    line(200,150,200,180);
    line(300,150,300,180);
    line(200,440,200,470);
    line(300,440,300,470);
+
+   //long vertical line wall
+   line(110,220,110,390);
+   line(390,220,390,390);
+   
    
    // "L"shape wall
    noFill();
