@@ -157,6 +157,27 @@ function draw(){
     if(snakePositionY > 575){
         snakePositionY = 575;
     }
+
+    //Make sure player does not go through the walls(line)
+    if(stevePositionX<100 && stevePositionY>140 && stevePositionY<170){
+        stevePositionY=140;
+    }
+    if(stevePositionX<120 && stevePositionY==170){
+        stevePositionX=120;
+    }
+    if(stevePositionX<100 && stevePositionY<200 && stevePositionY>170){
+        stevePositionY=200;
+    }
+
+    if(stevePositionX>400 && stevePositionY>140 && stevePositionY<170){
+        stevePositionY=140;
+    }
+    if(stevePositionX>380 && stevePositionY==170){
+        stevePositionX=380;
+    }
+    if(stevePositionX>400 && stevePositionY<200 && stevePositionY>170){
+        stevePositionY=200;
+    }
     
 
     //Gameover(check the hit box about steve and snake)
