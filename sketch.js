@@ -278,6 +278,8 @@ function draw(){
     if(stevePositionX>370 && stevePositionX<410 && stevePositionY<410 && stevePositionY>390){
         stevePositionY=410;
     }
+
+    // //Make sure player does not go through the walls("L"shape)
   
 
 
