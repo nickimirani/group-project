@@ -359,6 +359,44 @@ function draw(){
     if(stevePositionX>320 && stevePositionX<390 && stevePositionY>520 && stevePositionY<540){
         stevePositionY=540;
     }
+    //"C"shape wall
+    if(stevePositionX>190 && stevePositionX<310 && stevePositionY>200 && stevePositionY<220){
+        stevePositionY=200;
+    }
+    if(stevePositionX>190 && stevePositionX<310 && stevePositionY>220 && stevePositionY<240){
+        stevePositionY=240;
+    }
+    if(stevePositionX>190 && stevePositionX<310 && stevePositionY>370 && stevePositionY<390){
+        stevePositionY=370;
+    }
+    if(stevePositionX>190 && stevePositionX<310 && stevePositionY>390 && stevePositionY<410){
+        stevePositionY=410;
+    }
+    if(stevePositionX>180 && stevePositionX<200 && stevePositionY>220 && stevePositionY<390){
+        stevePositionX=180;
+    }
+    if(stevePositionX>200 && stevePositionX<220 && stevePositionY>220 && stevePositionY<390){
+        stevePositionX=220;
+    }
+    if(stevePositionX>280 && stevePositionX<300 && stevePositionY>220 && stevePositionY<250){
+        stevePositionX=280;
+    }
+    if(stevePositionX>300 && stevePositionX<320 && stevePositionY>220 && stevePositionY<250){
+        stevePositionX=320;
+    }
+    if(stevePositionX>280 && stevePositionX<300 && stevePositionY>360 && stevePositionY<390){
+        stevePositionX=280;
+    }
+    if(stevePositionX>300 && stevePositionX<320 && stevePositionY>360 && stevePositionY<390){
+        stevePositionX=320;
+    }
+    if(stevePositionX>280 && stevePositionX<320 && stevePositionY>250 && stevePositionY<270){
+        stevePositionY=270;
+    }
+    if(stevePositionX>280 && stevePositionX<320 && stevePositionY>340 && stevePositionY<360){
+        stevePositionY=340;
+    }
+    
 
 
     
@@ -608,7 +646,7 @@ function steve(x,y){
     rectMode(CENTER);
     fill(255,255, 0);
     //rect(x,y,30, 30,10);
-   rect(x,y,30,30,10);
+   rect(x,y,25,25,10);
 }
 
 //snake1
