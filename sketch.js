@@ -1,3 +1,10 @@
+
+
+/*let snake1;
+let snake2;
+let snake3;
+let snake4;*/
+
 let snakePositionX = 230;
 let snakePositionY = 255;
 let stevePositionX=230;
@@ -6,7 +13,6 @@ let stevePositionY=100;
 let bigCoin1X = 70;
 let bigCoin1Y = 305;
 
-let snakes;
 let speed = 10;
 
 let angle = 0;
@@ -36,20 +42,33 @@ function preload(){
 function setup(){
   createCanvas(500,650);
   frameRate(speed); 
+
+  /*snake1 = new Enemies(100,200);
+  snake2 = new Enemies(230,200);
+  snake3 = new Enemies(260,100);
+  snake4 = new Enemies(290,200);*/
 }
 
 function draw(){
 
     background(51);
+    
+    /*snake1.move();
+    snake1.show();
+    snake2.move();
+    snake2.show();
+    snake3.move();
+    snake3.show();
+    snake4.move();
+    snake4.show();*/
+
 
     //snake positions
     snake1(snakePositionX, snakePositionY);
+    snake2(x, y);
+    snake3(x, y);
+    snake4(snakePositionX, snakePositionY);
 
-
-    
-        snakePositionX = snakePositionX + 3;
-    
-    
     /*if (changeDirection == false){
         snakePositionX = snakePositionX - 3;
     }
@@ -70,23 +89,22 @@ function draw(){
         changeDirection = false;
     }*/
 
-    snake2(snakePositionX, snakePositionY);
+
     /*if (changeDirection == false){
         x = x + 3;
         }
-        if (changeDirection == true){
+    if (changeDirection == true){
             y= y - 3;
         }
-        if (x > 320){
-            //turn
-            changeDirection = true;
+    if (x > 320){
+        //turn
+        changeDirection = true;
         }
-        if (y < 100){
-            changeDirection = false;
-        }
-*/
-    snake3(snakePositionX, snakePositionY);
-    snake4(snakePositionX, snakePositionY);
+    if (y < 100){
+        changeDirection = false;
+        }*/
+
+    //snakePositionX = snakePositionX + 3;
     
     
     //steve start position
@@ -107,13 +125,6 @@ function draw(){
     }else if (keyCode === DOWN_ARROW) {
         stevePositionY += 5;
     } //14
-
-    
-    //if player and snake collide
-
-     if (snakePositionX === stevePositionX && snakePositionY === stevePositionY){
-        console.log("collision");
-    }
 
     
     
@@ -418,6 +429,12 @@ function draw(){
            redraw();
         }
     }
+
+    //if player and snake collide / game over
+
+    if (snakePositionX === stevePositionX && snakePositionY === stevePositionY){
+        console.log("collision");
+    }
     
     
    //game fence
@@ -638,6 +655,27 @@ function draw(){
    
    
 }
+
+//snakes
+/*class Enemies{
+    constructor(snakePositionX,snakePositionY){
+      this.x = snakePositionX;
+      this.y = snakePositionY;
+      
+    }
+
+move(){
+    this.x = this.x + random(-5,5);
+    this.y = this.y + random(-5,5);
+}
+
+show() {
+    stroke(255);
+    strokeWeight(4);
+    fill(50)
+    rect(this.x, this.y, 30,30);
+}
+}*/
  
 //player
 function steve(x,y){
@@ -650,7 +688,7 @@ function steve(x,y){
 }
 
 //snake1
-function snake1(x,y){
+function snake1(snakePositionX, snakePositionY){
     //push();
     //rotate(angle);
     strokeWeight(0);
@@ -658,6 +696,7 @@ function snake1(x,y){
     //rect(x,y,50, 20);
     rect(x,y,30, 30);
     //pop();
+    
 }
 
 //snake2
@@ -681,6 +720,8 @@ function snake4(x,y){
     //rect(x,y,50, 20);
     rect(x,y,30, 30);
 }
+
+
 
 //coin
 function coin(x,y){
