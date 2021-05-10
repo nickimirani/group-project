@@ -706,6 +706,6 @@ function Bigcoin(x,y){
         console.log("yay2");  
     }
     if (stevePositionX === 250 && stevePositionY === 555) {
-        console.log("yay3");  
+        console.log("yay3");
     }
 }
