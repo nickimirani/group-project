@@ -634,7 +634,7 @@ function draw(){
    coin(340,540);
    coin(340,575);
 
-   //coinsound (just a thought)
+   //coinsound (just a thought, can't work)
    let ding
    let coinsound
    function setup(){
