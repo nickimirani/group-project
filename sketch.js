@@ -8,9 +8,6 @@ let snakePositionY = 255;
 let stevePositionX=230;
 let stevePositionY=100;
 
-let bigCoin1X = 70;
-let bigCoin1Y = 305;
-
 let speed = 10;
 
 let angle = 0;
@@ -32,7 +29,9 @@ coin(200,410),coin(200,490),coin(200,540),coin(200,575),coin(235,410),coin(235,4
 coin(300,490),coin(300,540),coin(300,575),coin(445,470),coin(445,505),coin(445,540),coin(445,575),coin(415,470),coin(415,505),coin(415,540),coin(415,575),coin(350,450),
 coin(350,490),coin(380,540),coin(380,575),coin(340,540),coin(340,575)];
 
-let bigcoins=[Bigcoin(70,305),Bigcoin(430,305),Bigcoin(250,555)];
+//let bigcoins=[Bigcoin(70,305),Bigcoin(430,305),Bigcoin(250,555)];
+
+let bigCoins = [];
 
 function preload(){
     
@@ -47,7 +46,8 @@ function draw(){
 
     background(51);
 
-    //enemies class
+
+    //snakes
     class Enemies{
     
         constructor(snakePositionX,snakePositionY){
@@ -59,8 +59,8 @@ function draw(){
     move(){
         /*this.x = this.x + random(50, -50);
         this.y = this.y + random(50, -50);*/
-        this.x = this.x + Math.floor(Math.random()*10);
-        this.y = this.y + Math.floor(Math.random()*10);
+        this.x = this.x + Math.floor(Math.random()*50);
+        this.y = this.y + Math.floor(Math.random()*50);
 
     }
 
@@ -700,18 +700,7 @@ enemy4 = new Enemies(290,200);
    Bigcoin(70,305);
    Bigcoin(430,305);
    Bigcoin(250,555); 
-    
-   //big coin 1
-   /*fill(255 ,215, 0);
-   ellipse(70,305,15,15);
 
-   //big coin 2
-   fill(255 ,215, 0);
-   ellipse(430,305,15,15);
-
-   //big coin 3
-   fill(255 ,215, 0);
-   ellipse(250,555,15,15);*/
    
    
 }
@@ -777,3 +766,30 @@ function Bigcoin(x,y){
     ellipse(x,y,15,15);
 
 }
+
+/*function Bigcoin(x,y) {
+    this.x = x;
+    this.y = y;
+    
+    this.display = function() {
+      fill(255,215,0);
+      ellipse(this.x,this.y,15,15);
+    }
+}
+
+for(var i = 0; i < 4; i++) {
+    for(var j = 0; j < 4; j++) {
+      bigCoins.push(new Bigcoin(80+i*80,80+j*80));
+    }
+}
+
+for(var i = 0; i < bigCoins.length; i++) {
+    bigCoins[i].display();
+    var d = dist(bigCoins[i].x,bigCoins[i].y,x,y)
+    //var d2 = s/2 + coinSize/2;
+    if(d === stevePositionX && stevePositionY) {
+      bigCoins.splice(i,1);
+    }
+  }*/
+
+
