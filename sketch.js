@@ -39,7 +39,6 @@ let bigCoins = [];
 
 function preload(){
 
-    coinsound = loadSound('mixkit-space-coin-win-notification-271.wav');
 
     //ding = loadSound('assets/coinsound.mp3');
 }
@@ -47,6 +46,8 @@ function preload(){
 function setup(){
   createCanvas(500,650);
   frameRate(speed); 
+
+  coinsound = loadSound('mixkit-space-coin-win-notification-271.wav');
 }
 
 function draw(){
@@ -694,20 +695,20 @@ enemy4 = new Enemies(290,200);
     enemy2 = speed;
     speed = 5;
     score++;
-    document.getElementById("score").innerHTML = "Score: " + score;
+    document.getElementById("score").innerHTML = "SCORE: " + score;
     coinsound.play();
     console.log("yay");
 }
 fill(200,200,0);
 if (stevePositionX === 430 && stevePositionY === 305) {
     score++;
-    document.getElementById("score").innerHTML = "Score: " + score;
+    document.getElementById("score").innerHTML = "SCORE: " + score;
     coinsound.play();
     console.log("yay2");  
 }
 if (stevePositionX === 250 && stevePositionY === 555) {
     score++;
-    document.getElementById("score").innerHTML = "Score: " + score;
+    document.getElementById("score").innerHTML = "SCORE: " + score;
     coinsound.play();
     console.log("yay3");
 }
