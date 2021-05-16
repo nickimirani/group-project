@@ -664,8 +664,8 @@ enemy4 = new Enemies(290,200);
    coin(340,575);
 
    //coinsound (just a thought, can't work)
-   let ding
-   let coinsound
+   let ding;
+   let coinsound;
    function setup(){
      soundFormats('mp3', 'ogg');
      ding = loadSound('assets/coinsound.mp3');
@@ -678,14 +678,14 @@ enemy4 = new Enemies(290,200);
   var testY = cy;
 
  
-  if (cx < rx){         testX = rx       // left edge
-  }else if (cx > rx+rw){ testX = rx+rw  }   // right edge
+  if (cx < rx){         testX = rx;       // left edge
+  }else if (cx > rx+rw){ testX = rx+rw;  }  // right edge
 
-  if (cy < ry){         testY = ry       // top edge
-  }else if (cy > ry+rh){ testY = ry+rh }   // bottom edge
+  if (cy < ry){         testY = ry;       // top edge
+  }else if (cy > ry+rh){ testY = ry+rh; }   // bottom edge
 
   // // get distance from closest edges
-  var distance = this.dist(cx,cy,testX,testY)
+  var distance = this.dist(cx,cy,testX,testY);
 
   // if the distance is less than the radius, collision!
   if (distance <= diameter/2) {
