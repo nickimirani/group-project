@@ -18,6 +18,10 @@ let y = 280;
 
 let score = 0;
 
+let ding;
+let coinsound;
+
+
 let coins=[coin(55,60),coin(55,100),coin(55,140),coin(85,60),coin(85,100),coin(85,140),coin(120,60),coin(160,60),coin(150,120),coin(150,160),coin(200,60),
 coin(200,120),coin(235,60),coin(235,160),coin(235,200),coin(270,60),coin(270,160),coin(270,200),coin(300,60),coin(300,120),coin(445,60),coin(445,100),coin(445,140),
 coin(415,60),coin(415,100),coin(415,140),coin(380,60),coin(340,60),coin(350,120),coin(350,160),coin(55,200),coin(55,250),coin(55,360),coin(55,410),
@@ -34,12 +38,16 @@ coin(350,490),coin(380,540),coin(380,575),coin(340,540),coin(340,575)];
 let bigCoins = [];
 
 function preload(){
+
+    //soundFormats('mp3', 'ogg');
     
 }
 
 function setup(){
   createCanvas(500,650);
   frameRate(speed); 
+
+  ding = loadSound('assets/coinsound.mp3');
 }
 
 function draw(){
@@ -151,17 +159,20 @@ enemy4 = new Enemies(290,200);
         speed = 1;
         score++;
         document.getElementById("score").innerHTML = "Score: " + score;
+        ding.play();
         console.log("yay");
     }
     fill(200,200,0);
     if (stevePositionX === 430 && stevePositionY === 305) {
         score++;
         document.getElementById("score").innerHTML = "Score: " + score;
+        ding.play();
         console.log("yay2");  
     }
     if (stevePositionX === 250 && stevePositionY === 555) {
         score++;
         document.getElementById("score").innerHTML = "Score: " + score;
+        ding.play();
         console.log("yay3");
     }
 
@@ -664,12 +675,8 @@ enemy4 = new Enemies(290,200);
    coin(340,575);
 
    //coinsound (just a thought, can't work)
-   let ding;
-   let coinsound;
-   function setup(){
-     soundFormats('mp3', 'ogg');
-     ding = loadSound('assets/coinsound.mp3');
-   }
+   
+   
 
   
    p5.prototype.collideRectCircle = function (rx, ry, rw, rh, cx, cy, diameter) {
