@@ -44,7 +44,7 @@ function setup(){
 
 function draw(){
 
-    background(51);
+    background(0,0,0);
 
 
     //snakes
