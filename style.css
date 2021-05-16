@@ -12,19 +12,19 @@ main{
     margin-left: 35%;
     font-family: 'Gill Sans', sans-serif;
     font-weight: 600;
-    -webkit-text-stroke: 0.5px blue;
+    color: blue
 }
 
 #level{
     margin-left: 7%;
     font-family: 'Gill Sans', sans-serif;
     font-weight: 600;
-    -webkit-text-stroke: 0.5px blue;
+    color: blue;
 }
 
 #lives{
     margin-left: 7%;
     font-family: 'Gill Sans', sans-serif;
     font-weight: 600;
-    -webkit-text-stroke: 0.5px blue;
+    color: blue;
 }
