@@ -39,15 +39,14 @@ let bigCoins = [];
 
 function preload(){
 
-    //soundFormats('mp3', 'ogg');
-    
+    coinsound = loadSound('mixkit-space-coin-win-notification-271.wav');
+
+    //ding = loadSound('assets/coinsound.mp3');
 }
 
 function setup(){
   createCanvas(500,650);
   frameRate(speed); 
-
-  ding = loadSound('assets/coinsound.mp3');
 }
 
 function draw(){
@@ -159,20 +158,20 @@ enemy4 = new Enemies(290,200);
         speed = 1;
         score++;
         document.getElementById("score").innerHTML = "Score: " + score;
-        ding.play();
+        coinsound.play();
         console.log("yay");
     }
     fill(200,200,0);
     if (stevePositionX === 430 && stevePositionY === 305) {
         score++;
         document.getElementById("score").innerHTML = "Score: " + score;
-        ding.play();
+        coinsound.play();
         console.log("yay2");  
     }
     if (stevePositionX === 250 && stevePositionY === 555) {
         score++;
         document.getElementById("score").innerHTML = "Score: " + score;
-        ding.play();
+        coinsound.play();
         console.log("yay3");
     }
 
