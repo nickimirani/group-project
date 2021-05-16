@@ -1,1 +1,30 @@
+main{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
 
+.container{
+    display: flex;
+}
+
+#score{
+    margin-left: 35%;
+    font-family: 'Gill Sans', sans-serif;
+    font-weight: 600;
+    color: blue
+}
+
+#level{
+    margin-left: 7%;
+    font-family: 'Gill Sans', sans-serif;
+    font-weight: 600;
+    color: blue;
+}
+
+#lives{
+    margin-left: 7%;
+    font-family: 'Gill Sans', sans-serif;
+    font-weight: 600;
+    color: blue;
+}
