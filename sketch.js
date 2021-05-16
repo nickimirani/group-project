@@ -13,8 +13,8 @@ let speed = 10;
 let angle = 0;
 let changeDirection = false;
 
-let x = 230;
-let y = 280;
+/*let x = 230;
+let y = 280;*/
 
 let score = 0;
 
@@ -72,6 +72,8 @@ function draw(){
     }
 
     move1(){
+
+        this.x = snakePositionX += speed;
 
         /*this.x = snakePositionX + Math.floor(Math.random()*100);
 
@@ -151,29 +153,6 @@ enemy4 = new Enemies(290,200);
     }else if (keyCode === DOWN_ARROW) {
         stevePositionY += 5;
     } 
-
-
-    //when steve collects bigger coin
-    if (stevePositionX === 70 && stevePositionY === 305) {
-        speed = 1;
-        score++;
-        document.getElementById("score").innerHTML = "Score: " + score;
-        coinsound.play();
-        console.log("yay");
-    }
-    fill(200,200,0);
-    if (stevePositionX === 430 && stevePositionY === 305) {
-        score++;
-        document.getElementById("score").innerHTML = "Score: " + score;
-        coinsound.play();
-        console.log("yay2");  
-    }
-    if (stevePositionX === 250 && stevePositionY === 555) {
-        score++;
-        document.getElementById("score").innerHTML = "Score: " + score;
-        coinsound.play();
-        console.log("yay3");
-    }
 
 
    
@@ -706,6 +685,32 @@ enemy4 = new Enemies(290,200);
    Bigcoin(70,305);
    Bigcoin(430,305);
    Bigcoin(250,555); 
+
+   
+
+   //when steve collects the bigger coins
+   if (stevePositionX === 70 && stevePositionY === 305) {
+    //speed
+    enemy2 = speed;
+    speed = 5;
+    score++;
+    document.getElementById("score").innerHTML = "Score: " + score;
+    coinsound.play();
+    console.log("yay");
+}
+fill(200,200,0);
+if (stevePositionX === 430 && stevePositionY === 305) {
+    score++;
+    document.getElementById("score").innerHTML = "Score: " + score;
+    coinsound.play();
+    console.log("yay2");  
+}
+if (stevePositionX === 250 && stevePositionY === 555) {
+    score++;
+    document.getElementById("score").innerHTML = "Score: " + score;
+    coinsound.play();
+    console.log("yay3");
+}
 
    
    
