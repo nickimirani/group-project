@@ -22,7 +22,7 @@ let ding;
 let coinsound;
 
 
-let coins=[coin(55,60),coin(55,100),coin(55,140),coin(85,60),coin(85,100),coin(85,140),coin(120,60),coin(160,60),coin(150,120),coin(150,160),coin(200,60),
+/*let coins=[coin(55,60),coin(55,100),coin(55,140),coin(85,60),coin(85,100),coin(85,140),coin(120,60),coin(160,60),coin(150,120),coin(150,160),coin(200,60),
 coin(200,120),coin(235,60),coin(235,160),coin(235,200),coin(270,60),coin(270,160),coin(270,200),coin(300,60),coin(300,120),coin(445,60),coin(445,100),coin(445,140),
 coin(415,60),coin(415,100),coin(415,140),coin(380,60),coin(340,60),coin(350,120),coin(350,160),coin(55,200),coin(55,250),coin(55,360),coin(55,410),
 coin(85,200),coin(85,250),coin(85,360),coin(85,410),coin(150,200),coin(150,240),coin(150,280),coin(150,330),coin(150,370),coin(150,410),coin(235,245),
@@ -31,7 +31,7 @@ coin(415,200),coin(415,250),coin(415,360),coin(415,410),coin(350,200),coin(350,2
 coin(55,505),coin(55,540),coin(55,575),coin(85,470),coin(85,505),coin(85,540),coin(85,575),coin(150,450),coin(150,490),coin(120,540),coin(120,575),coin(160,540),coin(160,575),
 coin(200,410),coin(200,490),coin(200,540),coin(200,575),coin(235,410),coin(235,450),coin(235,490),coin(270,410),coin(270,450),coin(270,490),coin(300,410),
 coin(300,490),coin(300,540),coin(300,575),coin(445,470),coin(445,505),coin(445,540),coin(445,575),coin(415,470),coin(415,505),coin(415,540),coin(415,575),coin(350,450),
-coin(350,490),coin(380,540),coin(380,575),coin(340,540),coin(340,575)];
+coin(350,490),coin(380,540),coin(380,575),coin(340,540),coin(340,575)]*/
 
 //let bigcoins=[Bigcoin(70,305),Bigcoin(430,305),Bigcoin(250,555)];
 
