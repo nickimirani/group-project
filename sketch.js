@@ -5,10 +5,10 @@ let enemy4;
 
 let snakePositionX = 230;
 let snakePositionY = 255;
-let stevePositionX=230;
-let stevePositionY=100;
+let stevePositionX= 235;
+let stevePositionY= 125;
 
-let speed = 10;
+let speed = 6;
 
 let angle = 0;
 let changeDirection = false;
@@ -53,7 +53,7 @@ function setup(){
   createCanvas(500,650);
   // 500 650
   frameRate(speed); 
-  coinsound = loadSound('mixkit-space-coin-win-notification-271.wav');
+  //coinsound = loadSound('mixkit-space-coin-win-notification-271.wav');
   
 //ding = loadSound('assets/coinsound.mp3');
 }
@@ -76,8 +76,8 @@ function draw(){
     move(){
         /*this.x = this.x + random(50, -50);
         this.y = this.y + random(50, -50);*/
-        this.x = this.x + Math.floor(Math.random()*50);
-        this.y = this.y + Math.floor(Math.random()*50);
+        this.x = this.x + Math.floor(Math.random()*36);
+        this.y = this.y + Math.floor(Math.random()*36);
 
     }
 
@@ -126,17 +126,17 @@ enemy4 = new Enemies(290,200);
     
     //steve movement
     if (keyCode === LEFT_ARROW) {
-        stevePositionX -= 5;
+        stevePositionX -= 36;
         
     }else if (keyCode === RIGHT_ARROW) {
-       stevePositionX += 5;
+       stevePositionX += 36;
     }
     
     if (keyCode === UP_ARROW) {
-        stevePositionY -= 5;
+        stevePositionY -= 36;
 
     }else if (keyCode === DOWN_ARROW) {
-        stevePositionY += 5;
+        stevePositionY += 36;
     } 
 
 
@@ -437,7 +437,7 @@ enemy4 = new Enemies(290,200);
 
    
     //grid
-  for (var i = 0; i < width; i+= 33){
+  for (var i = 0; i < width; i+= 36){
     stroke(0,0,100);
     line (i, 0, i, height);
     line (width, i, 0, i);
@@ -449,7 +449,7 @@ enemy4 = new Enemies(290,200);
    stroke(0,0,255);
    strokeWeight(4);
    beginShape();
-   vertex(30, 30);
+   vertex(36, 30);
    vertex(470, 30);
    vertex(470, 600);
    vertex(30, 600);
