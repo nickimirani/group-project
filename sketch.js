@@ -36,18 +36,18 @@ coin(350,490),coin(380,540),coin(380,575),coin(340,540),coin(340,575)]*/
 //let bigcoins=[Bigcoin(70,305),Bigcoin(430,305),Bigcoin(250,555)];
 
 let bigCoins = [];
+let bigCoinSize = 20;
 
 function preload(){
 
-
-    //ding = loadSound('assets/coinsound.mp3');
 }
 
 function setup(){
   createCanvas(500,650);
   frameRate(speed); 
-
   coinsound = loadSound('mixkit-space-coin-win-notification-271.wav');
+  
+//ding = loadSound('assets/coinsound.mp3');
 }
 
 function draw(){
@@ -63,6 +63,7 @@ function draw(){
           this.y = snakePositionY;
           
         }
+
     //snakes movement
     move(){
         /*this.x = this.x + random(50, -50);
@@ -652,9 +653,6 @@ enemy4 = new Enemies(290,200);
    coin(380,575);
    coin(340,540);
    coin(340,575);
-
-   //coinsound (just a thought, can't work)
-   
    
 
   
@@ -681,22 +679,20 @@ enemy4 = new Enemies(290,200);
 
 };
 
-   
-   //  Big coin 
+    //  Big coin 
    Bigcoin(70,305);
-   Bigcoin(430,305);
-   Bigcoin(250,555); 
+    Bigcoin(430,305);
+    Bigcoin(250,555);
 
-   
 
    //when steve collects the bigger coins
    if (stevePositionX === 70 && stevePositionY === 305) {
     //speed
-    enemy2 = speed;
-    speed = 5;
     score++;
     document.getElementById("score").innerHTML = "SCORE: " + score;
     coinsound.play();
+	bigCoins.splice(0, 1);
+
     console.log("yay");
 }
 fill(200,200,0);
@@ -712,13 +708,9 @@ if (stevePositionX === 250 && stevePositionY === 555) {
     coinsound.play();
     console.log("yay3");
 }
-
-   
-   
 }
 
 
- 
 //player
 function steve(x,y){
     //strokeWeight(1);
@@ -728,6 +720,7 @@ function steve(x,y){
     //rect(x,y,30, 30,10);
    rect(x,y,25,25,10);
 }
+
 
 //snake1
 /*function snake1(x, y){
@@ -779,29 +772,20 @@ function Bigcoin(x,y){
 
 }
 
+// Object that stores positions of coins
 /*function Bigcoin(x,y) {
     this.x = x;
     this.y = y;
     
     this.display = function() {
-      fill(255,215,0);
-      ellipse(this.x,this.y,15,15);
-    }
-}
-
-for(var i = 0; i < 4; i++) {
-    for(var j = 0; j < 4; j++) {
-      bigCoins.push(new Bigcoin(80+i*80,80+j*80));
-    }
-}
-
-for(var i = 0; i < bigCoins.length; i++) {
-    bigCoins[i].display();
-    var d = dist(bigCoins[i].x,bigCoins[i].y,x,y)
-    //var d2 = s/2 + coinSize/2;
-    if(d === stevePositionX && stevePositionY) {
-      bigCoins.splice(i,1);
+      fill(20,20,20);
+      ellipse(this.x,this.y, bigCoinSize);
     }
   }*/
+
+
+
+
+
 
 
