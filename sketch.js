@@ -439,8 +439,8 @@ enemy4 = new Enemies(290,200);
     //grid
   for (var i = 0; i < width; i+= 36){
     stroke(0,0,100);
-    line (i, 0, i, height);
-    line (width, i, 0, i);
+    line (i, 0, i, height );
+    line (width, i, 0, i );
   }
     
     
@@ -451,16 +451,16 @@ enemy4 = new Enemies(290,200);
    beginShape();
    vertex(36, 30);
    vertex(470, 30);
-   vertex(470, 600);
-   vertex(30, 600);
+   vertex(470, 610);
+   vertex(36, 610);
    endShape(CLOSE);
    
    
    //"horizontal line"wall
    strokeWeight(4);
-   line(30,170,100,170);
+   line(36,170,106,170);
    line(400,170,470,170);
-   line(30,440,100,440);
+   line(36,440,106,440);
    line(400,440,470,440);
 
    //short vertical line wall
@@ -506,12 +506,12 @@ enemy4 = new Enemies(290,200);
    // "C"shape wall
    noFill();
    beginShape();
-   vertex(300,360);
-   vertex(300,390);
-   vertex(200,390);
-   vertex(200,220);
-   vertex(300,220);
-   vertex(300,250);
+   vertex(290,360);
+   vertex(290,390);
+   vertex(180,390);
+   vertex(180,220);
+   vertex(290,220);
+   vertex(290,250);
    endShape();
 
    
