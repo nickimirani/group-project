@@ -160,11 +160,11 @@ enemy4 = new Enemies(290,200);
    
     //so steve & snakes doesn't move outside of the canvas
 
-    if(stevePositionX < 60){
-        stevePositionX = 60;
+    if(stevePositionX < 55){
+        stevePositionX = 55;
     }
-    if(snakePositionX < 60){
-        snakePositionX = 60;
+    if(snakePositionX < 55){
+        snakePositionX = 55;
     }
     if(stevePositionX > 445){
         stevePositionX = 445;
