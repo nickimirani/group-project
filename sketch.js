@@ -61,6 +61,7 @@ function draw(){
 
     background(0,0,0);
 
+   
     //snakes
     class Enemies{
     
