@@ -36,13 +36,20 @@ coin(350,490),coin(380,540),coin(380,575),coin(340,540),coin(340,575)]*/
 //let bigcoins=[Bigcoin(70,305),Bigcoin(430,305),Bigcoin(250,555)];
 
 let bigCoins = [];
-let bigCoinSize = 20;
+
+let bigCoin1;
+let bigCoin2;
+let bigCoin3;
+let bigCoin4;
+
+
 
 function preload(){
 
 }
 
 function setup(){
+
   createCanvas(500,650);
   frameRate(speed); 
   coinsound = loadSound('mixkit-space-coin-win-notification-271.wav');
@@ -53,7 +60,6 @@ function setup(){
 function draw(){
 
     background(0,0,0);
-
 
     //snakes
     class Enemies{
@@ -76,37 +82,10 @@ function draw(){
     move1(){
 
         this.x = snakePositionX += speed;
-
-        /*this.x = snakePositionX + Math.floor(Math.random()*100);
-
-        if(this.x > 50){
-            snakePositionY + Math.floor(Math.random()*100);
-        }*/
-        
-        /*this.x = snakePositionX + 5;
-        if(snakePositionX > 100){
-            snakePositionX = snakePositionX - 5;
-        }
-        if (snakePositionY = 100){
-            snakePositionY = snakePositionY + 5;
-        }*/
-        
-        /*if (changeDirection == false){
-        snakePositionX = snakePositionX + 3;
-        }
-         if (changeDirection == true){
-            snakePositionY= snakePositionY - 3;
-        }
-        if (x > 320){
-        //turn
-        changeDirection = true;
-        }
-        if (y < 100){
-        changeDirection = false;
-        }*/
        
     }
     
+    //drawing snakes
     show() {
         
         strokeWeight(4);
@@ -115,10 +94,12 @@ function draw(){
     }
     }
 
+//snake positions
 enemy1 = new Enemies(100,400);
 enemy2 = new Enemies(230,300);
 enemy3 = new Enemies(260,100);
 enemy4 = new Enemies(290,200);
+
     
     enemy1.move1();
     enemy1.show();
@@ -448,13 +429,10 @@ enemy4 = new Enemies(290,200);
 
     //if player and snake collide / game over
 
-    /*if (snakePositionX === stevePositionX && snakePositionY === stevePositionY){
-        console.log("collision");
-    }*/
-
     if (snakePositionX === stevePositionX && snakePositionY === stevePositionY){
         console.log("collision");
     }
+
     
     
    //game fence
@@ -691,11 +669,9 @@ enemy4 = new Enemies(290,200);
     score++;
     document.getElementById("score").innerHTML = "SCORE: " + score;
     coinsound.play();
-	bigCoins.splice(0, 1);
-
     console.log("yay");
 }
-fill(200,200,0);
+
 if (stevePositionX === 430 && stevePositionY === 305) {
     score++;
     document.getElementById("score").innerHTML = "SCORE: " + score;
@@ -708,6 +684,7 @@ if (stevePositionX === 250 && stevePositionY === 555) {
     coinsound.play();
     console.log("yay3");
 }
+
 }
 
 
@@ -772,16 +749,6 @@ function Bigcoin(x,y){
 
 }
 
-// Object that stores positions of coins
-/*function Bigcoin(x,y) {
-    this.x = x;
-    this.y = y;
-    
-    this.display = function() {
-      fill(20,20,20);
-      ellipse(this.x,this.y, bigCoinSize);
-    }
-  }*/
 
 
 
