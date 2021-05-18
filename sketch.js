@@ -51,6 +51,7 @@ function preload(){
 function setup(){
 
   createCanvas(500,650);
+  // 500 650
   frameRate(speed); 
   coinsound = loadSound('mixkit-space-coin-win-notification-271.wav');
   
@@ -434,6 +435,13 @@ enemy4 = new Enemies(290,200);
         console.log("collision");
     }
 
+   
+    //grid
+  for (var i = 0; i < width; i+= 33){
+    stroke(0,0,100);
+    line (i, 0, i, height);
+    line (width, i, 0, i);
+  }
     
     
    //game fence
