@@ -69,6 +69,8 @@ function draw(){
         constructor(snakePositionX,snakePositionY){
           this.x = snakePositionX;
           this.y = snakePositionY;
+          this.directionX = random(-36,36);
+          this.directionY = random(-36,36);
           
         }
 
@@ -76,8 +78,32 @@ function draw(){
     move(){
         /*this.x = this.x + random(50, -50);
         this.y = this.y + random(50, -50);*/
-        this.x = this.x + Math.floor(Math.random()*36);
-        this.y = this.y + Math.floor(Math.random()*36);
+        /*this.x = this.x + Math.floor(Math.random()*36);
+        this.y = this.y + Math.floor(Math.random()*36);*/
+
+         //possible squares to move on
+   // const directions =  [-1, +1, width, -width];
+    //let direction = directions[Math.floor(Math.random() * directions.length)];
+
+    this.x = this.x + this.directionX; 
+    this.y = this.y + this.directionY;
+    
+        if (this.x < 0){
+            this.directionX = this.directionX * -1; 
+           }
+             
+           if (this.x > width){
+            this.directionX = this.directionX * -1; 
+           }
+             if (this.y < 0){
+            this.directionY = this.directionY * -1; 
+           }
+             
+           if (this.y > width){
+            this.directionY = this.directionY * -1; 
+           }
+ 
+        
 
     }
 
@@ -97,10 +123,10 @@ function draw(){
     }
 
 //snake positions
-enemy1 = new Enemies(100,400);
-enemy2 = new Enemies(230,300);
-enemy3 = new Enemies(260,100);
-enemy4 = new Enemies(290,200);
+enemy1 = new Enemies(268,340);
+enemy2 = new Enemies(196,340);
+enemy3 = new Enemies(196,270);
+enemy4 = new Enemies(268,270);
 
     
     enemy1.move1();
@@ -111,6 +137,8 @@ enemy4 = new Enemies(290,200);
     enemy3.show();
     enemy4.move();
     enemy4.show();
+
+
 
 
     //snake positions
@@ -149,20 +177,20 @@ enemy4 = new Enemies(290,200);
     if(snakePositionX < 55){
         snakePositionX = 55;
     }
-    if(stevePositionX > 445){
-        stevePositionX = 445;
+    if(stevePositionX > 455){
+        stevePositionX = 455;
     }
     if(snakePositionX > 445){
         snakePositionX = 445;
     }
-    if(stevePositionY < 60){
-        stevePositionY = 60;
+    if(stevePositionY < 50){
+        stevePositionY = 50;
     }
     if(snakePositionY < 60){
         snakePositionY = 60;
     }
-    if(stevePositionY > 575){
-        stevePositionY = 575;
+    if(stevePositionY > 590){
+        stevePositionY = 590;
     }
     if(snakePositionY > 575){
         snakePositionY = 575;
@@ -757,6 +785,24 @@ function Bigcoin(x,y){
     ellipse(x,y,15,15);
 
 }
+
+/*function moveSnake(enemy1,enemy2, enemy3, enemy4) {
+    var directions =  [-1, +1, width, -width];
+    let direction = directions[Math.floor(Math.random() * directions.length)];
+
+    ghost.timerId = setInterval(function() {
+      //if the next squre your ghost is going to go to does not have a ghost and does not have a wall
+      if  (!squares[ghost.currentIndex + direction].classList.contains('ghost') &&
+        !squares[ghost.currentIndex + direction].classList.contains('wall') ) {
+          //remove the ghosts classes
+          squares[ghost.currentIndex].classList.remove(ghost.className)
+          squares[ghost.currentIndex].classList.remove('ghost', 'scared-ghost')
+          //move into that space
+          ghost.currentIndex += direction
+          squares[ghost.currentIndex].classList.add(ghost.className, 'ghost')
+      //else find a new random direction ot go in
+      } else direction = directions[Math.floor(Math.random() * directions.length)]
+    }*/
 
 
 
