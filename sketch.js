@@ -118,7 +118,7 @@ function draw(){
         
         strokeWeight(4);
         fill(0,255,0);
-        rect(this.x, this.y, 30,30);
+        rect(this.x, this.y, 20,20);
     }
     }
 
