@@ -437,27 +437,6 @@ enemy4 = new Enemies(268,270);
     }
     
 
-
-    
-    
-
-    //Gameover(check the hit box about steve and snake)
-    function collideRectRect(stevePositionX, stevePositionY, w, h, snakePositionX, snakePositionY, w2, h2) {
-        if ( 
-           stevePositionX + w >= snakePositionX &&    
-            // r1 right edge past r2 left
-           stevePositionX <= snakePositionX + w2 &&    
-            // r1 left edge past r2 right
-           stevePositionY + h >= snakePositionY &&    
-            // r1 top edge past r2 bottom
-           stevePositionY <= snakePositionY + h2)     
-            // r1 bottom edge past r2 top   
-       {    
-            
-           redraw();
-        }
-    }
-
     //if player and snake collide / game over
 
     if (snakePositionX === stevePositionX && snakePositionY === stevePositionY){
@@ -476,10 +455,10 @@ enemy4 = new Enemies(268,270);
    stroke(0,0,255);
    strokeWeight(4);
    beginShape();
-   vertex(36, 30);
-   vertex(470, 30);
-   vertex(470, 610);
-   vertex(36, 610);
+   vertex(50, 45);
+   vertex(460, 45);
+   vertex(460, 610);
+   vertex(50, 610);
    endShape(CLOSE);
    
    
@@ -721,6 +700,23 @@ if (stevePositionX === 250 && stevePositionY === 555) {
     console.log("yay3");
 }
 
+}
+//I put this down here because it's here where functions are
+//Gameover(check the hit box about steve and snake)
+function collideRectRect(stevePositionX, stevePositionY, w, h, snakePositionX, snakePositionY, w2, h2) {
+    if ( 
+       stevePositionX + w >= snakePositionX &&    
+        // r1 right edge past r2 left
+       stevePositionX <= snakePositionX + w2 &&    
+        // r1 left edge past r2 right
+       stevePositionY + h >= snakePositionY &&    
+        // r1 top edge past r2 bottom
+       stevePositionY <= snakePositionY + h2)     
+        // r1 bottom edge past r2 top   
+   {    
+        
+       redraw();
+    }
 }
 
 
