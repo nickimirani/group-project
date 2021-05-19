@@ -169,14 +169,6 @@ enemy4 = new Enemies(268,270);
     } 
 
 
-     //grid
-  for (var i = 0; i < width; i+= 24){
-    stroke(0,0,100);
-    line (i, 0, i, height );
-    line (width, i, 0, i );
-  }
-
-
    
     //so steve & snakes doesn't move outside of the canvas
 
@@ -472,7 +464,12 @@ enemy4 = new Enemies(268,270);
         console.log("collision");
     }
 
-    
+         //grid
+  for (var i = 0; i < width; i+= 24){
+    stroke(0,0,100);
+    line (i, 0, i, height );
+    line (width, i, 0, i );
+  }
     
    //game fence
    noFill();
