@@ -69,8 +69,8 @@ function draw(){
         constructor(snakePositionX,snakePositionY){
           this.x = snakePositionX;
           this.y = snakePositionY;
-          this.directionX = random(-36,36);
-          this.directionY = random(-36,36);
+          /*this.directionX = random(-36,36);
+          this.directionY = random(-36,36);*/
           
         }
 
@@ -85,7 +85,7 @@ function draw(){
    // const directions =  [-1, +1, width, -width];
     //let direction = directions[Math.floor(Math.random() * directions.length)];
 
-    this.x = this.x + this.directionX; 
+   /* this.x = this.x + this.directionX; 
     this.y = this.y + this.directionY;
     
         if (this.x < 0){
@@ -101,7 +101,7 @@ function draw(){
              
            if (this.y > width){
             this.directionY = this.directionY * -1; 
-           }
+           }*/
  
         
 
@@ -153,6 +153,7 @@ enemy4 = new Enemies(268,270);
     
     
     //steve movement
+    //36 - snaps to grid
     if (keyCode === LEFT_ARROW) {
         stevePositionX -= 36;
         
