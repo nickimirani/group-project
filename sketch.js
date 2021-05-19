@@ -66,14 +66,14 @@ function draw(){
     //snakes
     class Enemies{
     
-        constructor(){
-          //this.x = snakePositionX;
-          //this.y = snakePositionY;
+        constructor(snakePositionX,snakePositionY){
+          this.x = snakePositionX;
+          this.y = snakePositionY;
 
-          this.x = random(width);
-          this.y = random(height);
-          this.xSpeed = random(-1,1);
-          this.ySpeed = random(-1,1);
+          //this.x = random(width);
+          //this.y = random(height);
+          //this.xSpeed = random(-1,1);
+          //this.ySpeed = random(-1,1);
          
           
         }
@@ -85,7 +85,7 @@ function draw(){
     /*this.x = this.x + this.directionX; 
     this.y = this.y + this.directionY;*/
     
-      this.x = this.x + this.xSpeed; 
+      /*this.x = this.x + this.xSpeed; 
    this.y = this.y + this.ySpeed;
     
   if (this.x < 0){
@@ -101,7 +101,7 @@ function draw(){
     
   if (this.y > width){
    this.ySpeed = this.ySpeed  -1; 
-  }
+  }*/
 
 
     }
@@ -790,6 +790,25 @@ function Bigcoin(x,y){
       //else find a new random direction ot go in
       } else direction = directions[Math.floor(Math.random() * directions.length)]
     }*/
+
+
+    /*function Tile(x, y, type, behavior) {
+
+        this.x = x;
+        this.y = y;
+        this.type = type;
+      
+          this.destination = (-1, -1);
+        this.moving = false;
+      
+        this.intact = true;
+      
+        this.speed = 0.2;
+      
+        this.behavior = behavior; 
+      }*/
+
+    
 
 
 
