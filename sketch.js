@@ -5,8 +5,8 @@ let enemy4;
 
 let snakePositionX = 230;
 let snakePositionY = 255;
-let stevePositionX= 235;
-let stevePositionY= 125;
+let stevePositionX= 250;
+let stevePositionY= 155;
 
 let speed = 6;
 
@@ -66,11 +66,15 @@ function draw(){
     //snakes
     class Enemies{
     
-        constructor(snakePositionX,snakePositionY){
-          this.x = snakePositionX;
-          this.y = snakePositionY;
-          /*this.directionX = random(-36,36);
-          this.directionY = random(-36,36);*/
+        constructor(){
+          //this.x = snakePositionX;
+          //this.y = snakePositionY;
+
+          this.x = random(width);
+          this.y = random(height);
+          this.xSpeed = random(-1,1);
+          this.ySpeed = random(-1,1);
+         
           
         }
 
@@ -78,41 +82,30 @@ function draw(){
     move(){
         /*this.x = this.x + random(50, -50);
         this.y = this.y + random(50, -50);*/
-        /*this.x = this.x + Math.floor(Math.random()*36);
-        this.y = this.y + Math.floor(Math.random()*36);*/
-
-         //possible squares to move on
-   // const directions =  [-1, +1, width, -width];
-    //let direction = directions[Math.floor(Math.random() * directions.length)];
-
-   /* this.x = this.x + this.directionX; 
-    this.y = this.y + this.directionY;
+    /*this.x = this.x + this.directionX; 
+    this.y = this.y + this.directionY;*/
     
-        if (this.x < 0){
-            this.directionX = this.directionX * -1; 
-           }
-             
-           if (this.x > width){
-            this.directionX = this.directionX * -1; 
-           }
-             if (this.y < 0){
-            this.directionY = this.directionY * -1; 
-           }
-             
-           if (this.y > width){
-            this.directionY = this.directionY * -1; 
-           }*/
- 
-        
+      this.x = this.x + this.xSpeed; 
+   this.y = this.y + this.ySpeed;
+    
+  if (this.x < 0){
+   this.xSpeed = this.xSpeed  -1; 
+  }
+    
+  if (this.x > width){
+   this.xSpeed = this.xSpeed  -1; 
+  }
+    if (this.y < 0){
+   this.ySpeed = this.ySpeed  -1; 
+  }
+    
+  if (this.y > width){
+   this.ySpeed = this.ySpeed  -1; 
+  }
+
 
     }
 
-    move1(){
-
-        this.x = snakePositionX += speed;
-       
-    }
-    
     //drawing snakes
     show() {
         
@@ -129,7 +122,7 @@ enemy3 = new Enemies(196,270);
 enemy4 = new Enemies(268,270);
 
     
-    enemy1.move1();
+    enemy1.move();
     enemy1.show();
     enemy2.move();
     enemy2.show();
@@ -138,9 +131,7 @@ enemy4 = new Enemies(268,270);
     enemy4.move();
     enemy4.show();
 
-
-
-
+    
     //snake positions
     /*snake1(snakePositionX, snakePositionY);
     snake2(snakePositionX, snakePositionY);
@@ -172,26 +163,26 @@ enemy4 = new Enemies(268,270);
    
     //so steve & snakes doesn't move outside of the canvas
 
-    if(stevePositionX < 55){
-        stevePositionX = 55;
+    if(stevePositionX < 60){
+        stevePositionX = 60;
     }
-    if(snakePositionX < 55){
-        snakePositionX = 55;
+    if(snakePositionX < 60){
+        snakePositionX = 60;
     }
-    if(stevePositionX > 455){
-        stevePositionX = 455;
+    if(stevePositionX > 445){
+        stevePositionX = 445;
     }
     if(snakePositionX > 445){
         snakePositionX = 445;
     }
-    if(stevePositionY < 50){
-        stevePositionY = 50;
+    if(stevePositionY < 60){
+        stevePositionY = 60;
     }
     if(snakePositionY < 60){
         snakePositionY = 60;
     }
-    if(stevePositionY > 590){
-        stevePositionY = 590;
+    if(stevePositionY > 600){
+        stevePositionY = 600;
     }
     if(snakePositionY > 575){
         snakePositionY = 575;
@@ -443,12 +434,13 @@ enemy4 = new Enemies(268,270);
         console.log("collision");
     }
 
-         //grid
+    //grid
   for (var i = 0; i < width; i+= 24){
     stroke(0,0,100);
     line (i, 0, i, height );
     line (width, i, 0, i );
   }
+
     
    //game fence
    noFill();
@@ -798,6 +790,8 @@ function Bigcoin(x,y){
       //else find a new random direction ot go in
       } else direction = directions[Math.floor(Math.random() * directions.length)]
     }*/
+
+
 
 
 
