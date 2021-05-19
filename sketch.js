@@ -155,18 +155,26 @@ enemy4 = new Enemies(268,270);
     //steve movement
     //36 - snaps to grid
     if (keyCode === LEFT_ARROW) {
-        stevePositionX -= 36;
+        stevePositionX -= 24;
         
     }else if (keyCode === RIGHT_ARROW) {
-       stevePositionX += 36;
+       stevePositionX += 24;
     }
     
     if (keyCode === UP_ARROW) {
-        stevePositionY -= 36;
+        stevePositionY -= 24;
 
     }else if (keyCode === DOWN_ARROW) {
-        stevePositionY += 36;
+        stevePositionY += 24;
     } 
+
+
+     //grid
+  for (var i = 0; i < width; i+= 24){
+    stroke(0,0,100);
+    line (i, 0, i, height );
+    line (width, i, 0, i );
+  }
 
 
    
@@ -464,13 +472,6 @@ enemy4 = new Enemies(268,270);
         console.log("collision");
     }
 
-   
-    //grid
-  for (var i = 0; i < width; i+= 36){
-    stroke(0,0,100);
-    line (i, 0, i, height );
-    line (width, i, 0, i );
-  }
     
     
    //game fence
