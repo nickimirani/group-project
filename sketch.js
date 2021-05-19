@@ -208,8 +208,8 @@ enemy4 = new Enemies(268,270);
         stevePositionY=200;
     }
     //Second horizontal line
-    if(stevePositionX>400 && stevePositionY>170 && stevePositionY<170){
-        stevePositionY=10;
+    if(stevePositionX>400 && stevePositionY>140 && stevePositionY<170){
+        stevePositionY=140;
     }
     if(stevePositionX>380 && stevePositionY==170){
         stevePositionX=380;
