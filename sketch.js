@@ -734,7 +734,7 @@ function steve(x,y){
     rectMode(CENTER);
     fill(255,255, 0);
     //rect(x,y,30, 30,10);
-   rect(x,y,25,25,10);
+   rect(x,y,20,20,7);
 }
 
 
