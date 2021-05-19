@@ -198,8 +198,8 @@ enemy4 = new Enemies(268,270);
 
     //Make sure player does not go through the walls(horizontal line)
     //First horizontal line
-    if(stevePositionX<100 && stevePositionY>170 && stevePositionY<180){
-        stevePositionY=170;
+    if(stevePositionX<100 && stevePositionY>140 && stevePositionY<170){
+        stevePositionY=140;
     }
     if(stevePositionX<120 && stevePositionY==170){
         stevePositionX=120;
@@ -486,8 +486,8 @@ enemy4 = new Enemies(268,270);
    
    //"horizontal line"wall
    strokeWeight(4);
-   line(36,180,106,180);
-   line(400,180,470,180);
+   line(36,170,106,170);
+   line(400,170,470,170);
    line(36,440,106,440);
    line(400,440,470,440);
 
