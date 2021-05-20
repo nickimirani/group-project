@@ -13,17 +13,15 @@ let bigcoinSize=15;
 let steveSize=20;
 
 let speed = 10;
-
-let angle = 0;
 let changeDirection = false;
 
-/*let x = 230;
-let y = 280;*/
-
 let score = 0;
+//initial level
+let level = 1;
 
 let ding;
 let coinsound;
+let bigCoinSound;
 
 let coins=[];
 let bigCoins = [];
@@ -37,7 +35,8 @@ function setup(){
   createCanvas(500,650);
   // 500 650
   frameRate(speed); 
-  //coinsound = loadSound('mixkit-space-coin-win-notification-271.wav');
+  coinsound = loadSound('mixkit-space-coin-win-notification-271.wav');
+  bigCoinSound = loadSound('mixkit-unlock-game-notification-253.wav');
   
   //ding = loadSound('assets/coinsound.mp3');
 
@@ -67,6 +66,7 @@ function draw(){
         var radius1 = steveSize/2 + coinSize/2;
         if(distance1 < radius1) {
           coins.splice(i,1);
+          coinsound.play();
           score++;
           document.getElementById("score").innerHTML = "SCORE: " + score;
           
@@ -80,64 +80,67 @@ function draw(){
         var radius2 = steveSize/2 + bigcoinSize/2;
         if(distance2 < radius2) {
            bigCoins.splice(a,1);
+           bigCoinSound.play();
            score++;
            document.getElementById("score").innerHTML = "SCORE: " + score;
-           console.log("yay3");
+           console.log("yay");
     }
   } 
 
-  
-    //snakes
-    class Enemies{
-    
-        constructor(snakePositionX,snakePositionY){
-          this.x = snakePositionX;
-          this.y = snakePositionY;
 
-          //this.x = random(width);
-          //this.y = random(height);
-          //this.xSpeed = random(-1,1);
-          //this.ySpeed = random(-1,1);
-         
-          
-        }
+ //snakes
+ class Enemies{
+    
+    constructor(snakePositionX, snakePositionY){
+      
+      this.x = snakePositionX;
+      this.y = snakePositionY;
 
-    //snakes movement
-    move(){
-        /*this.x = this.x + random(50, -50);
-        this.y = this.y + random(50, -50);*/
-    /*this.x = this.x + this.directionX; 
-    this.y = this.y + this.directionY;*/
-    
-      /*this.x = this.x + this.xSpeed; 
-   this.y = this.y + this.ySpeed;
-    
-  if (this.x < 0){
-   this.xSpeed = this.xSpeed  -1; 
-  }
-    
-  if (this.x > width){
-   this.xSpeed = this.xSpeed  -1; 
-  }
-    if (this.y < 0){
-   this.ySpeed = this.ySpeed  -1; 
-  }
-    
-  if (this.y > width){
-   this.ySpeed = this.ySpeed  -1; 
-  }*/
-
-
+      //this.x = random(width);
+      //this.y = random(height);
+      //this.xSpeed = random(-1,1);
+      //this.ySpeed = random(-1,1);
+     
     }
 
-    //drawing snakes
-    show() {
-        
-        strokeWeight(4);
-        fill(0,255,0);
-        rect(this.x, this.y, 20,20);
-    }
-    }
+//snakes movement
+move(){
+    /*this.x = this.x + random(50, -50);
+    this.y = this.y + random(50, -50);*/
+/*this.x = this.x + this.directionX; 
+this.y = this.y + this.directionY;*/
+
+  /*this.x = this.x + this.xSpeed; 
+this.y = this.y + this.ySpeed;
+
+if (this.x < 0){
+this.xSpeed = this.xSpeed  -1; 
+}
+
+if (this.x > width){
+this.xSpeed = this.xSpeed  -1; 
+}
+if (this.y < 0){
+this.ySpeed = this.ySpeed  -1; 
+}
+
+if (this.y > width){
+this.ySpeed = this.ySpeed  -1; 
+}*/
+
+this.x = snakePositionX + 1;
+
+
+}
+
+//drawing snakes
+show() {
+    
+    strokeWeight(4);
+    fill(0,255,0);
+    rect(this.x, this.y, 20,20);
+}
+}
 
 //snake positions
 enemy1 = new Enemies(268,340);
@@ -154,13 +157,6 @@ enemy4 = new Enemies(268,270);
     enemy3.show();
     enemy4.move();
     enemy4.show();
-
-    
-    //snake positions
-    /*snake1(snakePositionX, snakePositionY);
-    snake2(snakePositionX, snakePositionY);
-    snake3(snakePositionX, snakePositionY);
-    snake4(400, 300);*/
     
     
     //steve start position
@@ -182,6 +178,13 @@ enemy4 = new Enemies(268,270);
     }else if (keyCode === DOWN_ARROW) {
         stevePositionY += 5;
     } 
+
+
+     //Level goes up if all 144 coins are collected
+     if(score == 144 ){
+    //plus 2 because the first level is considered 0
+    document.getElementById("level").innerHTML = "LEVEL: " + 2;
+}
 
 
    
@@ -586,41 +589,6 @@ function steve(x,y){
 }
 
 
-//snake1
-/*function snake1(x, y){
-    //push();
-    //rotate(angle);
-    strokeWeight(0);
-    fill(0, 255 , 0);
-    //rect(x,y,50, 20);
-    rect(x,y,30, 30);
-    //pop();
-    
-}
-
-//snake2
-function snake2(x,y){
-    strokeWeight(0);
-    fill(255,0,0);
-    //rect(x,y,50, 20);
-    rect(x,y,30, 30);
-}
-//snake3
-function snake3(x,y){
-    strokeWeight(0);
-    fill(255 , 100 , 255);
-    //rect(x,y,50, 20);
-    rect(x,y,30, 30);
-}
-//snake4
-function snake4(x,y){
-    strokeWeight(0);
-    fill(0 , 0 , 255);
-    //rect(x,y,50, 20);
-    rect(x,y,30, 30);
-}*/
-
-
 //coin
 class coin {
     constructor(x, y) {
@@ -685,6 +653,8 @@ class Bigcoin {
       
         this.behavior = behavior; 
       }*/
+
+
 
     
 
