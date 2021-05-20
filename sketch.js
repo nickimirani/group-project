@@ -8,7 +8,11 @@ let snakePositionY = 255;
 let stevePositionX= 250;
 let stevePositionY= 155;
 
-let speed = 6;
+let coinSize=10;
+let bigcoinSize=15;
+let steveSize=20;
+
+let speed = 10;
 
 let angle = 0;
 let changeDirection = false;
@@ -21,20 +25,7 @@ let score = 0;
 let ding;
 let coinsound;
 
-
-/*let coins=[coin(55,60),coin(55,100),coin(55,140),coin(85,60),coin(85,100),coin(85,140),coin(120,60),coin(160,60),coin(150,120),coin(150,160),coin(200,60),
-coin(200,120),coin(235,60),coin(235,160),coin(235,200),coin(270,60),coin(270,160),coin(270,200),coin(300,60),coin(300,120),coin(445,60),coin(445,100),coin(445,140),
-coin(415,60),coin(415,100),coin(415,140),coin(380,60),coin(340,60),coin(350,120),coin(350,160),coin(55,200),coin(55,250),coin(55,360),coin(55,410),
-coin(85,200),coin(85,250),coin(85,360),coin(85,410),coin(150,200),coin(150,240),coin(150,280),coin(150,330),coin(150,370),coin(150,410),coin(235,245),
-coin(235,285),coin(235,325),coin(235,365),coin(270,245),coin(270,285),coin(270,325),coin(270,365),coin(445,200),coin(445,250),coin(445,360),coin(445,410),
-coin(415,200),coin(415,250),coin(415,360),coin(415,410),coin(350,200),coin(350,240),coin(350,280),coin(350,330),coin(350,370),coin(350,410),coin(55,470),
-coin(55,505),coin(55,540),coin(55,575),coin(85,470),coin(85,505),coin(85,540),coin(85,575),coin(150,450),coin(150,490),coin(120,540),coin(120,575),coin(160,540),coin(160,575),
-coin(200,410),coin(200,490),coin(200,540),coin(200,575),coin(235,410),coin(235,450),coin(235,490),coin(270,410),coin(270,450),coin(270,490),coin(300,410),
-coin(300,490),coin(300,540),coin(300,575),coin(445,470),coin(445,505),coin(445,540),coin(445,575),coin(415,470),coin(415,505),coin(415,540),coin(415,575),coin(350,450),
-coin(350,490),coin(380,540),coin(380,575),coin(340,540),coin(340,575)]*/
-
-//let bigcoins=[Bigcoin(70,305),Bigcoin(430,305),Bigcoin(250,555)];
-
+let coins=[];
 let bigCoins = [];
 
 let bigCoin1;
@@ -55,12 +46,52 @@ function setup(){
   frameRate(speed); 
   //coinsound = loadSound('mixkit-space-coin-win-notification-271.wav');
   
-//ding = loadSound('assets/coinsound.mp3');
+  //ding = loadSound('assets/coinsound.mp3');
+
+  //create small coins
+  for(var i = 0; i < 10; i++) {
+    for(var j = 0; j < 14; j++) {
+      coins.push(new coin(70+i*40,70+j*40));
+    }
+   }
+
+  //create big coins
+  for(var a=0; a<2;a++){
+    for(var b=0 ; b<2; b++){
+      bigCoins.push(new Bigcoin(70+a*360,70+b*520));
+    }
+  }
 }
 
 function draw(){
 
     background(0,0,0);
+
+    //When player collects small coins
+    for(var i = 0; i < coins.length; i++) {
+        coins[i].display();
+        var distance1 = dist(coins[i].x,coins[i].y,stevePositionX,stevePositionY);
+        var radius1 = steveSize/2 + coinSize/2;
+        if(distance1 < radius1) {
+          coins.splice(i,1);
+          score++;
+          document.getElementById("score").innerHTML = "SCORE: " + score;
+          
+        }
+      }
+      
+    //When player collects big coins
+    for(var a = 0; a < bigCoins.length; a++) {
+        bigCoins[a].display();
+        var distance2 = dist(bigCoins[a].x,bigCoins[a].y,stevePositionX,stevePositionY);
+        var radius2 = steveSize/2 + bigcoinSize/2;
+        if(distance2 < radius2) {
+           bigCoins.splice(a,1);
+           score++;
+           document.getElementById("score").innerHTML = "SCORE: " + score;
+           console.log("yay3");
+    }
+  } 
 
    
     //snakes
@@ -434,12 +465,6 @@ enemy4 = new Enemies(268,270);
         console.log("collision");
     }
 
-    //grid
-  for (var i = 0; i < width; i+= 24){
-    stroke(0,0,100);
-    line (i, 0, i, height );
-    line (width, i, 0, i );
-  }
 
     
    //game fence
@@ -511,136 +536,8 @@ enemy4 = new Enemies(268,270);
    vertex(290,220);
    vertex(290,250);
    endShape();
+ 
 
-   
-   // coin NW corner
-   coin(55,60);
-   coin(55,100);
-   coin(55,140);
-   coin(85,60);
-   coin(85,100);
-   coin(85,140);
-   coin(120,60);
-   coin(160,60);
-   coin(150,120);
-   coin(150,160);
-   
-   // coin North
-   coin(200,60);
-   coin(200,120);
-   coin(235,60);
-   coin(235,160);
-   coin(235,200);
-   coin(270,60);
-   coin(270,160);
-   coin(270,200);
-   coin(300,60);
-   coin(300,120);
-  
-   // coin NE corner
-   coin(445,60);
-   coin(445,100);
-   coin(445,140);
-   coin(415,60);
-   coin(415,100);
-   coin(415,140);
-   coin(380,60);
-   coin(340,60);
-   coin(350,120);
-   coin(350,160);
-  
-   // coin West
-   coin(55,200);
-   coin(55,250);
-   coin(55,360);
-   coin(55,410);
-   coin(85,200);
-   coin(85,250);
-   coin(85,360);
-   coin(85,410);
-   coin(150,200);
-   coin(150,240);
-   coin(150,280);
-   coin(150,330);
-   coin(150,370);
-   coin(150,410);
-  
-   // coin Center
-   coin(235,245);
-   coin(235,285);
-   coin(235,325);
-   coin(235,365);
-   coin(270,245);
-   coin(270,285);
-   coin(270,325);
-   coin(270,365);
-  
-   // coin Eest
-   coin(445,200);
-   coin(445,250);
-   coin(445,360);
-   coin(445,410);
-   coin(415,200);
-   coin(415,250);
-   coin(415,360);
-   coin(415,410);
-   coin(350,200);
-   coin(350,240);
-   coin(350,280);
-   coin(350,330);
-   coin(350,370);
-   coin(350,410);
-  
-   // coin SW corner
-   coin(55,470);
-   coin(55,505);
-   coin(55,540);
-   coin(55,575);
-   coin(85,470);
-   coin(85,505);
-   coin(85,540);
-   coin(85,575);
-   coin(150,450);
-   coin(150,490);
-   coin(120,540);
-   coin(120,575);
-   coin(160,540);
-   coin(160,575);
-  
-   // coin South
-   coin(200,410);
-   coin(200,490);
-   coin(200,540);
-   coin(200,575);
-   coin(235,410);
-   coin(235,450);
-   coin(235,490);
-   coin(270,410);
-   coin(270,450);
-   coin(270,490);
-   coin(300,410);
-   coin(300,490);
-   coin(300,540);
-   coin(300,575);
-  
-   // coin SE corner
-   coin(445,470);
-   coin(445,505);
-   coin(445,540);
-   coin(445,575);
-   coin(415,470);
-   coin(415,505);
-   coin(415,540);
-   coin(415,575);
-   coin(350,450);
-   coin(350,490);
-   coin(380,540);
-   coin(380,575);
-   coin(340,540);
-   coin(340,575);
-   
-
-  
    p5.prototype.collideRectCircle = function (rx, ry, rw, rh, cx, cy, diameter) {
 
   var testX = cx;
@@ -664,33 +561,6 @@ enemy4 = new Enemies(268,270);
 
 };
 
-    //  Big coin 
-   Bigcoin(70,305);
-    Bigcoin(430,305);
-    Bigcoin(250,555);
-
-
-   //when steve collects the bigger coins
-   if (stevePositionX === 70 && stevePositionY === 305) {
-    //speed
-    score++;
-    document.getElementById("score").innerHTML = "SCORE: " + score;
-    coinsound.play();
-    console.log("yay");
-}
-
-if (stevePositionX === 430 && stevePositionY === 305) {
-    score++;
-    document.getElementById("score").innerHTML = "SCORE: " + score;
-    coinsound.play();
-    console.log("yay2");  
-}
-if (stevePositionX === 250 && stevePositionY === 555) {
-    score++;
-    document.getElementById("score").innerHTML = "SCORE: " + score;
-    coinsound.play();
-    console.log("yay3");
-}
 
 }
 //I put this down here because it's here where functions are
@@ -760,16 +630,27 @@ function snake4(x,y){
 
 //coin
 function coin(x,y){
-    noStroke();
-    fill(255 ,182, 0);
-    ellipse(x,y,10,10);
+    this.x = x;
+    this.y = y;
+    
+    this.display = function() {
+      noStroke();
+      fill(255 ,182, 0);
+      ellipse(x,y,coinSize);
+    };
 }
 
 //Bigcion
 function Bigcoin(x,y){
 
-    fill(255 ,215, 0);
-    ellipse(x,y,15,15);
+    this.x = x;
+    this.y = y;
+    
+    this.display=function(){
+      noStroke();
+      fill(255 ,215, 0);
+      ellipse(x,y,bigcoinSize);
+    };
 
 }
 
