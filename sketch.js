@@ -177,17 +177,17 @@ enemy4 = new Enemies(268,270);
     //steve movement
     //36 - snaps to grid
     if (keyCode === LEFT_ARROW) {
-        stevePositionX -= 24;
+        stevePositionX -= 5;
         
     }else if (keyCode === RIGHT_ARROW) {
-       stevePositionX += 24;
+       stevePositionX += 5;
     }
     
     if (keyCode === UP_ARROW) {
-        stevePositionY -= 24;
+        stevePositionY -= 5;
 
     }else if (keyCode === DOWN_ARROW) {
-        stevePositionY += 24;
+        stevePositionY += 5;
     } 
 
 
