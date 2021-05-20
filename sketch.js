@@ -196,14 +196,14 @@ enemy4 = new Enemies(268,270);
     if(snakePositionX < 60){
         snakePositionX = 60;
     }
-    if(stevePositionX > 445){
-        stevePositionX = 445;
+    if(stevePositionX > 440){
+        stevePositionX = 440;
     }
-    if(snakePositionX > 445){
-        snakePositionX = 445;
+    if(snakePositionX > 440){
+        snakePositionX = 440;
     }
-    if(stevePositionY < 60){
-        stevePositionY = 60;
+    if(stevePositionY < 55){
+        stevePositionY = 55;
     }
     if(snakePositionY < 60){
         snakePositionY = 60;
@@ -217,241 +217,243 @@ enemy4 = new Enemies(268,270);
 
     //Make sure player does not go through the walls(horizontal line)
     //First horizontal line
-    if(stevePositionX<100 && stevePositionY>140 && stevePositionY<170){
-        stevePositionY=140;
+    if(stevePositionX<120 && stevePositionY>160 && stevePositionY<170){
+        stevePositionY=160;
     }
-    if(stevePositionX<120 && stevePositionY==170){
-        stevePositionX=120;
+    if(stevePositionX<130 && stevePositionY==170){
+        stevePositionX=130;
     }
-    if(stevePositionX<100 && stevePositionY<200 && stevePositionY>170){
-        stevePositionY=200;
+    if(stevePositionX<120 && stevePositionY<180 && stevePositionY>170){
+        stevePositionY=180;
     }
     //Second horizontal line
-    if(stevePositionX>400 && stevePositionY>140 && stevePositionY<170){
-        stevePositionY=140;
+    if(stevePositionX>380 && stevePositionY>160 && stevePositionY<170){
+        stevePositionY=160;
     }
-    if(stevePositionX>380 && stevePositionY==170){
-        stevePositionX=380;
+    if(stevePositionX>370 && stevePositionY==170){
+        stevePositionX=370;
     }
-    if(stevePositionX>400 && stevePositionY<200 && stevePositionY>170){
-        stevePositionY=200;
+    if(stevePositionX>380 && stevePositionY<180 && stevePositionY>170){
+        stevePositionY=180;
     }
     //Third horizontal line 
-    if(stevePositionX<100 && stevePositionY>410 && stevePositionY<440){
-        stevePositionY=410;
+    if(stevePositionX<120 && stevePositionY>480 && stevePositionY<490){
+        stevePositionY=480;
     }
-    if(stevePositionX<120 && stevePositionY==440){
-        stevePositionX=120;
+    if(stevePositionX<130 && stevePositionY==490){
+        stevePositionX=130;
     }
-    if(stevePositionX<100 && stevePositionY<470 && stevePositionY>440){
-        stevePositionY=470;
+    if(stevePositionX<120 && stevePositionY<500 && stevePositionY>490){
+        stevePositionY=500;
     }
     //Fourth horizontal line
-    if(stevePositionX>400 && stevePositionY>410 && stevePositionY<440){
-        stevePositionY=410;
+    if(stevePositionX>380 && stevePositionY>480 && stevePositionY<490){
+        stevePositionY=480;
     }
-    if(stevePositionX>380 && stevePositionY==440){
-        stevePositionX=380;
+    if(stevePositionX>370 && stevePositionY==490){
+        stevePositionX=370;
     }
-    if(stevePositionX>400 && stevePositionY<470 && stevePositionY>440){
-        stevePositionY=470;
+    if(stevePositionX>380 && stevePositionY<500 && stevePositionY>490){
+        stevePositionY=500;
     }
 
     //Make sure player does not go through the walls(short vertical line)
     //First short vertical line
-    if(stevePositionX>180 && stevePositionX<200 && stevePositionY>150 && stevePositionY<180){
-        stevePositionX=180;
+    if(stevePositionX>200 && stevePositionX<210 && stevePositionY>140 && stevePositionY<170){
+        stevePositionX=200;
     }
-    if(stevePositionX>200 && stevePositionX<220 && stevePositionY>150 && stevePositionY<180){
+    if(stevePositionX>210 && stevePositionX<220 && stevePositionY>140 && stevePositionY<170){
         stevePositionX=220;
     }
-    if(stevePositionX>180 && stevePositionX<220 && stevePositionY>130 && stevePositionY<150){
+    if(stevePositionX>200 && stevePositionX<220 && stevePositionY>130 && stevePositionY<140){
         stevePositionY=130;
     }
-    if(stevePositionX>180 && stevePositionX<220 && stevePositionY<200 && stevePositionY>180){
-        stevePositionY=200;
+    if(stevePositionX>200 && stevePositionX<220 && stevePositionY<180 && stevePositionY>170){
+        stevePositionY=180;
     }
     //Second short vertical line
-    if(stevePositionX>280 && stevePositionX<300 && stevePositionY>150 && stevePositionY<180){
+    if(stevePositionX>280 && stevePositionX<290 && stevePositionY>140 && stevePositionY<170){
         stevePositionX=280;
     }
-    if(stevePositionX>300 && stevePositionX<320 && stevePositionY>150 && stevePositionY<180){
-        stevePositionX=320;
+    if(stevePositionX>290 && stevePositionX<300 && stevePositionY>140 && stevePositionY<170){
+        stevePositionX=300;
     }
-    if(stevePositionX>280 && stevePositionX<320 && stevePositionY>130 && stevePositionY<150){
+    if(stevePositionX>280 && stevePositionX<300 && stevePositionY>130 && stevePositionY<140){
         stevePositionY=130;
     }
-    if(stevePositionX>280 && stevePositionX<320 && stevePositionY<200 && stevePositionY>180){
-        stevePositionY=200;
+    if(stevePositionX>280 && stevePositionX<300 && stevePositionY<180 && stevePositionY>170){
+        stevePositionY=180;
     }
     //Third short vertical line
-    if(stevePositionX>180 && stevePositionX<200 && stevePositionY>440 && stevePositionY<470){
-        stevePositionX=180;
+    if(stevePositionX>200 && stevePositionX<210 && stevePositionY>490 && stevePositionY<520){
+        stevePositionX=200;
     }
-    if(stevePositionX>200 && stevePositionX<220 && stevePositionY>440 && stevePositionY<470){
+    if(stevePositionX>210 && stevePositionX<220 && stevePositionY>490 && stevePositionY<520){
         stevePositionX=220;
     }
-    if(stevePositionX>180 && stevePositionX<220 && stevePositionY>420 && stevePositionY<440){
-        stevePositionY=420;
+    if(stevePositionX>200 && stevePositionX<220 && stevePositionY>480 && stevePositionY<490){
+        stevePositionY=480;
     }
-    if(stevePositionX>180 && stevePositionX<220 && stevePositionY<490 && stevePositionY>470){
-        stevePositionY=490;
+    if(stevePositionX>200 && stevePositionX<220 && stevePositionY<530 && stevePositionY>520){
+        stevePositionY=530;
     }
     //Fourth short vertical line
-    if(stevePositionX>280 && stevePositionX<300 && stevePositionY>440 && stevePositionY<470){
+    if(stevePositionX>280 && stevePositionX<290 && stevePositionY>490 && stevePositionY<520){
         stevePositionX=280;
     }
-    if(stevePositionX>300 && stevePositionX<320 && stevePositionY>440 && stevePositionY<470){
-        stevePositionX=320;
+    if(stevePositionX>290 && stevePositionX<300 && stevePositionY>490 && stevePositionY<520){
+        stevePositionX=300;
     }
-    if(stevePositionX>280 && stevePositionX<320 && stevePositionY>420 && stevePositionY<440){
-        stevePositionY=420;
+    if(stevePositionX>280 && stevePositionX<300 && stevePositionY>480 && stevePositionY<490){
+        stevePositionY=480;
     }
-    if(stevePositionX>280 && stevePositionX<320 && stevePositionY<490 && stevePositionY>470){
-        stevePositionY=490;
+    if(stevePositionX>280 && stevePositionX<300 && stevePositionY<530 && stevePositionY>520){
+        stevePositionY=530;
     }
+
 
     //Make sure player does not go through the walls(long vertical line)
     //First long vertical line
-    if(stevePositionX>90 && stevePositionX<110 && stevePositionY>220 && stevePositionY<390){
-        stevePositionX=90;
+    if(stevePositionX>120 && stevePositionX<130 && stevePositionY>210 && stevePositionY<450){
+        stevePositionX=120;
     }
-    if(stevePositionX>110 && stevePositionX<130 && stevePositionY>220 && stevePositionY<390){
-        stevePositionX=130;
+    if(stevePositionX>130 && stevePositionX<140 && stevePositionY>210 && stevePositionY<450){
+        stevePositionX=140;
     }
-    if(stevePositionX>90 && stevePositionX<130 && stevePositionY>200 && stevePositionY<220){
+    if(stevePositionX>120 && stevePositionX<140 && stevePositionY>200 && stevePositionY<210){
         stevePositionY=200;
     }
-    if(stevePositionX>90 && stevePositionX<130 && stevePositionY<410 && stevePositionY>390){
-        stevePositionY=410;
+    if(stevePositionX>120 && stevePositionX<140 && stevePositionY<460 && stevePositionY>450){
+        stevePositionY=460;
     }
     //Second long vertical line
-    if(stevePositionX>370 && stevePositionX<390 && stevePositionY>220 && stevePositionY<390){
-        stevePositionX=370;
+    if(stevePositionX>360 && stevePositionX<370 && stevePositionY>210 && stevePositionY<450){
+        stevePositionX=360;
     }
-    if(stevePositionX>390 && stevePositionX<410 && stevePositionY>220 && stevePositionY<390){
-        stevePositionX=410;
+    if(stevePositionX>370 && stevePositionX<380 && stevePositionY>210 && stevePositionY<450){
+        stevePositionX=380;
     }
-    if(stevePositionX>370 && stevePositionX<410 && stevePositionY>200 && stevePositionY<220){
+    if(stevePositionX>360 && stevePositionX<380 && stevePositionY>200 && stevePositionY<210){
         stevePositionY=200;
     }
-    if(stevePositionX>370 && stevePositionX<410 && stevePositionY<410 && stevePositionY>390){
-        stevePositionY=410;
+    if(stevePositionX>360 && stevePositionX<380 && stevePositionY<460 && stevePositionY>450){
+        stevePositionY=460;
     }
+
 
     // //Make sure player does not go through the walls("L"shape)
     //First "L"shape
-    if(stevePositionX>90 && stevePositionX<110 && stevePositionY>90 && stevePositionY<110){
-        stevePositionX=90;
+    if(stevePositionX>120 && stevePositionX<130 && stevePositionY>90 && stevePositionY<120){
+        stevePositionX=120;
     }
-    if(stevePositionX>110 && stevePositionX<130 && stevePositionY>90 && stevePositionY<110){
-        stevePositionX=130;
+    if(stevePositionX>130 && stevePositionX<140 && stevePositionY>90 && stevePositionY<120){
+        stevePositionX=140;
     }
-    if(stevePositionX>90 && stevePositionX<130 && stevePositionY<130 && stevePositionY>110){
+    if(stevePositionX>120 && stevePositionX<190 && stevePositionY<90 && stevePositionY>80){
+        stevePositionY=80;
+    }
+    if(stevePositionX>120 && stevePositionX<190 && stevePositionY>90 && stevePositionY<100){
+        stevePositionY=100;
+    }
+    if(stevePositionX>190 && stevePositionX<200 && stevePositionY==90){
+        stevePositionX=200;
+    }
+    if(stevePositionX>120 && stevePositionX<140 && stevePositionY>120 && stevePositionY<130){
         stevePositionY=130;
-    }
-    if(stevePositionX>110 && stevePositionX<180 && stevePositionY>70 && stevePositionY<95){
-        stevePositionY=70;
-    }
-    if(stevePositionX>170 && stevePositionX<190 && stevePositionY==90){
-        stevePositionX=190;
-    }
-    if(stevePositionX>110 && stevePositionX<180 && stevePositionY>95 && stevePositionY<120){
-        stevePositionY=120;
     }
     //Second "L"shape
-    if(stevePositionX>90 && stevePositionX<110 && stevePositionY>500 && stevePositionY<520){
-        stevePositionX=90;
+    if(stevePositionX>120 && stevePositionX<130 && stevePositionY>540 && stevePositionY<570){
+        stevePositionX=120;
     }
-    if(stevePositionX>110 && stevePositionX<130 && stevePositionY>500 && stevePositionY<520){
-        stevePositionX=130;
+    if(stevePositionX>130 && stevePositionX<140 && stevePositionY>540 && stevePositionY<570){
+        stevePositionX=140;
     }
-    if(stevePositionX>90 && stevePositionX<130 && stevePositionY<500 && stevePositionY>480){
-        stevePositionY=480;
+    if(stevePositionX>120 && stevePositionX<190 && stevePositionY<570 && stevePositionY>560){
+        stevePositionY=560;
     }
-    if(stevePositionX>110 && stevePositionX<180 && stevePositionY>495 && stevePositionY<520){
-        stevePositionY=495;
+    if(stevePositionX>120 && stevePositionX<190 && stevePositionY>570 && stevePositionY<580){
+        stevePositionY=580;
     }
-    if(stevePositionX>170 && stevePositionX<190 && stevePositionY==520){
-        stevePositionX=190;
+    if(stevePositionX>190 && stevePositionX<200 && stevePositionY==570){
+        stevePositionX=200;
     }
-    if(stevePositionX>110 && stevePositionX<180 && stevePositionY>520 && stevePositionY<540){
-        stevePositionY=540;
+    if(stevePositionX>120 && stevePositionX<140 && stevePositionY>530 && stevePositionY<540){
+        stevePositionY=530;
     }
     //Third "L"shape
-    if(stevePositionX>370 && stevePositionX<390 && stevePositionY>90 && stevePositionY<110){
-        stevePositionX=370;
+    if(stevePositionX>360 && stevePositionX<370 && stevePositionY>90 && stevePositionY<120){
+        stevePositionX=360;
     }
-    if(stevePositionX>390 && stevePositionX<410 && stevePositionY>90 && stevePositionY<110){
-        stevePositionX=410;
+    if(stevePositionX>370 && stevePositionX<380 && stevePositionY>90 && stevePositionY<120){
+        stevePositionX=380;
     }
-    if(stevePositionX>370 && stevePositionX<410 && stevePositionY<130 && stevePositionY>110){
+    if(stevePositionX>310 && stevePositionX<380 && stevePositionY<90 && stevePositionY>80){
+        stevePositionY=80;
+    }
+    if(stevePositionX>310 && stevePositionX<380 && stevePositionY>90 && stevePositionY<100){
+        stevePositionY=100;
+    }
+    if(stevePositionX>300 && stevePositionX<310 && stevePositionY==90){
+        stevePositionX=300;
+    }
+    if(stevePositionX>360 && stevePositionX<380 && stevePositionY>120 && stevePositionY<130){
         stevePositionY=130;
     }
-    if(stevePositionX>320 && stevePositionX<390 && stevePositionY>70 && stevePositionY<95){
-        stevePositionY=70;
-    }
-    if(stevePositionX>310 && stevePositionX<330 && stevePositionY==90){
-        stevePositionX=310;
-    }
-    if(stevePositionX>320 && stevePositionX<390 && stevePositionY>95 && stevePositionY<120){
-        stevePositionY=120;
-    }
     //Forth "L" shape
-    if(stevePositionX>370 && stevePositionX<390 && stevePositionY>500 && stevePositionY<520){
-        stevePositionX=370;
+    if(stevePositionX>360 && stevePositionX<370 && stevePositionY>540 && stevePositionY<570){
+        stevePositionX=360;
     }
-    if(stevePositionX>390 && stevePositionX<410 && stevePositionY>500 && stevePositionY<520){
-        stevePositionX=410;
+    if(stevePositionX>370 && stevePositionX<380 && stevePositionY>540 && stevePositionY<570){
+        stevePositionX=380;
     }
-    if(stevePositionX>370 && stevePositionX<410 && stevePositionY<500 && stevePositionY>480){
-        stevePositionY=480;
+    if(stevePositionX>310 && stevePositionX<380 && stevePositionY<570 && stevePositionY>560){
+        stevePositionY=560;
     }
-    if(stevePositionX>320 && stevePositionX<390 && stevePositionY>495 && stevePositionY<520){
-        stevePositionY=495;
+    if(stevePositionX>310 && stevePositionX<380 && stevePositionY>570 && stevePositionY<580){
+        stevePositionY=580;
     }
-    if(stevePositionX>310 && stevePositionX<330 && stevePositionY==520){
-        stevePositionX=310;
+    if(stevePositionX>300 && stevePositionX<310 && stevePositionY==570){
+        stevePositionX=300;
     }
-    if(stevePositionX>320 && stevePositionX<390 && stevePositionY>520 && stevePositionY<540){
-        stevePositionY=540;
+    if(stevePositionX>360 && stevePositionX<380 && stevePositionY>530 && stevePositionY<540){
+        stevePositionY=530;
     }
     //"C"shape wall
-    if(stevePositionX>190 && stevePositionX<310 && stevePositionY>200 && stevePositionY<220){
+    if(stevePositionX>200 && stevePositionX<300 && stevePositionY>200 && stevePositionY<210){
         stevePositionY=200;
     }
-    if(stevePositionX>190 && stevePositionX<310 && stevePositionY>220 && stevePositionY<240){
-        stevePositionY=240;
+    if(stevePositionX>200 && stevePositionX<300 && stevePositionY>210 && stevePositionY<220){
+        stevePositionY=220;
     }
-    if(stevePositionX>190 && stevePositionX<310 && stevePositionY>370 && stevePositionY<390){
-        stevePositionY=370;
+    if(stevePositionX>200 && stevePositionX<300 && stevePositionY>440 && stevePositionY<450){
+        stevePositionY=440;
     }
-    if(stevePositionX>190 && stevePositionX<310 && stevePositionY>390 && stevePositionY<410){
-        stevePositionY=410;
+    if(stevePositionX>200 && stevePositionX<300 && stevePositionY>450 && stevePositionY<460){
+        stevePositionY=460;
     }
-    if(stevePositionX>180 && stevePositionX<200 && stevePositionY>220 && stevePositionY<390){
-        stevePositionX=180;
+    if(stevePositionX>200 && stevePositionX<210 && stevePositionY>200 && stevePositionY<460){
+        stevePositionX=200;
     }
-    if(stevePositionX>200 && stevePositionX<220 && stevePositionY>220 && stevePositionY<390){
+    if(stevePositionX>210 && stevePositionX<220 && stevePositionY>200 && stevePositionY<460){
         stevePositionX=220;
     }
-    if(stevePositionX>280 && stevePositionX<300 && stevePositionY>220 && stevePositionY<250){
+    if(stevePositionX>280 && stevePositionX<290 && stevePositionY>200 && stevePositionY<240){
         stevePositionX=280;
     }
-    if(stevePositionX>300 && stevePositionX<320 && stevePositionY>220 && stevePositionY<250){
-        stevePositionX=320;
+    if(stevePositionX>290 && stevePositionX<300 && stevePositionY>200 && stevePositionY<240){
+        stevePositionX=300;
     }
-    if(stevePositionX>280 && stevePositionX<300 && stevePositionY>360 && stevePositionY<390){
+    if(stevePositionX>280 && stevePositionX<290 && stevePositionY>420 && stevePositionY<460){
         stevePositionX=280;
     }
-    if(stevePositionX>300 && stevePositionX<320 && stevePositionY>360 && stevePositionY<390){
-        stevePositionX=320;
+    if(stevePositionX>290 && stevePositionX<300 && stevePositionY>420 && stevePositionY<460){
+        stevePositionX=300;
     }
-    if(stevePositionX>280 && stevePositionX<320 && stevePositionY>250 && stevePositionY<270){
-        stevePositionY=270;
+    if(stevePositionX>280 && stevePositionX<300 && stevePositionY>240 && stevePositionY<250){
+        stevePositionY=250;
     }
-    if(stevePositionX>280 && stevePositionX<320 && stevePositionY>340 && stevePositionY<360){
-        stevePositionY=340;
+    if(stevePositionX>280 && stevePositionX<300 && stevePositionY>410 && stevePositionY<420){
+        stevePositionY=410;
     }
     
 
@@ -469,68 +471,68 @@ enemy4 = new Enemies(268,270);
    strokeWeight(4);
    beginShape();
    vertex(50, 45);
-   vertex(460, 45);
-   vertex(460, 610);
+   vertex(450, 45);
+   vertex(450, 610);
    vertex(50, 610);
    endShape(CLOSE);
    
    
    //"horizontal line"wall
    strokeWeight(4);
-   line(36,170,106,170);
-   line(400,170,470,170);
-   line(36,440,106,440);
-   line(400,440,470,440);
+   line(50,170,120,170);
+   line(380,170,450,170);
+   line(50,490,120,490);
+   line(380,490,450,490);
 
    //short vertical line wall
-   line(200,150,200,180);
-   line(300,150,300,180);
-   line(200,440,200,470);  
-   line(300,440,300,470);
+   line(210,140,210,170);
+   line(290,140,290,170);
+   line(210,490,210,520);  
+   line(290,490,290,520);
 
    //long vertical line wall
-   line(110,220,110,390);
-   line(390,220,390,390);
+   line(130,210,130,450);
+   line(370,210,370,450);
    
    
    // "L"shape wall
    noFill();
    beginShape();
-   vertex(110,110);
-   vertex(110,90);
-   vertex(170,90);
+   vertex(130,120);
+   vertex(130,90);
+   vertex(190,90);
    endShape();
   
    noFill();
    beginShape();
-   vertex(390,110);
-   vertex(390,90);
-   vertex(330,90);
+   vertex(370,120);
+   vertex(370,90);
+   vertex(310,90);
    endShape();
   
    noFill();
    beginShape();
-   vertex(110,500);
-   vertex(110,520);
-   vertex(170,520);
+   vertex(130,540);
+   vertex(130,570);
+   vertex(190,570);
    endShape();
    
    noFill();
    beginShape();
-   vertex(390,500);
-   vertex(390,520);
-   vertex(330,520);
+   vertex(370,540);
+   vertex(370,570);
+   vertex(310,570);
    endShape();
   
    // "C"shape wall
    noFill();
    beginShape();
-   vertex(290,360);
-   vertex(290,390);
-   vertex(180,390);
-   vertex(180,220);
-   vertex(290,220);
-   vertex(290,250);
+   vertex(290,420);
+   vertex(290,450);
+   vertex(210,450);
+   vertex(210,210);
+   vertex(290,210);
+   vertex(290,240);
    endShape();
  
 
