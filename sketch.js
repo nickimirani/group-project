@@ -28,13 +28,6 @@ let coinsound;
 let coins=[];
 let bigCoins = [];
 
-let bigCoin1;
-let bigCoin2;
-let bigCoin3;
-let bigCoin4;
-
-
-
 function preload(){
 
 }
