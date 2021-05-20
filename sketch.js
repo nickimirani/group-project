@@ -93,7 +93,7 @@ function draw(){
     }
   } 
 
-   
+  
     //snakes
     class Enemies{
     
@@ -629,29 +629,33 @@ function snake4(x,y){
 
 
 //coin
-function coin(x,y){
-    this.x = x;
-    this.y = y;
-    
-    this.display = function() {
-      noStroke();
-      fill(255 ,182, 0);
-      ellipse(x,y,coinSize);
-    };
+class coin {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+
+        this.display = function () {
+            noStroke();
+            fill(255, 182, 0);
+            ellipse(x, y, coinSize);
+        };
+    }
 }
 
 //Bigcion
-function Bigcoin(x,y){
+class Bigcoin {
+    constructor(x, y) {
 
-    this.x = x;
-    this.y = y;
-    
-    this.display=function(){
-      noStroke();
-      fill(255 ,215, 0);
-      ellipse(x,y,bigcoinSize);
-    };
+        this.x = x;
+        this.y = y;
 
+        this.display = function () {
+            noStroke();
+            fill(255, 215, 0);
+            ellipse(x, y, bigcoinSize);
+        };
+
+    }
 }
 
 /*function moveSnake(enemy1,enemy2, enemy3, enemy4) {
