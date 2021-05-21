@@ -59,9 +59,9 @@ function setup(){
 
 
   //snake positions
-enemy1 = new Enemies(268,240);
-enemy2 = new Enemies(268,280);
-enemy3 = new Enemies(268,340);
+enemy1 = new Enemies(268,300);
+enemy2 = new Enemies(268,330);
+enemy3 = new Enemies(268,360);
 enemy4 = new Enemies(268,390);
 }
 
@@ -411,7 +411,7 @@ function draw(){
 
     //if player and snake collide / game over
 
-    if (stevePositionX === this.xPos && stevePositionY === this.yPos){
+    if (stevePositionX === snakePositionX && stevePositionY === snakePositionY){
         console.log("collision");
     }
 
@@ -601,19 +601,23 @@ this.y += sin(this.rotation) * this.speed;*/
     //snakes
     class Enemies{
     
-    constructor(snakePositionX, snakePositionY){
-          
-        this.snakePositionX = snakePositionX;
-        this.snakePositionY= snakePositionY;
+    constructor(snakePositionX,snakePositionY){
     
-          //let directions =  [-1, +1, width, -width];
+     //let directions =  [-1, +1, width, -width];
     //let direction = directions[Math.floor(Math.random() * directions.length)];
+  
+    this.snakePositionX = snakePositionX;
+    this.snakePositionY= snakePositionY; //rätt
+      
     
-    //this.x = random(width);
-      //this.y = random(height);
-      this.speed = 5;
+    this.speed = 5;
 
-      this.direction1 = 100;
+    //one version
+      /*this.directionWidth = random(width);
+      this.directionHeight = random(height);
+      this.xSpeed = random(-speed,speed);
+      this.ySpeed = random(-speed,speed);*/
+
          
         }
     
@@ -623,13 +627,35 @@ this.y += sin(this.rotation) * this.speed;*/
 
         /*this.xPos += random(-this.speed, this.speed);
         this.yPos += random(-this.speed, this.speed);*/
-
-       //snakePositionX = 5; 
     
-       this.snakePositionX = this.snakePositionX + random(-1, 1);
-  // Moving up at a constant speed
-  this.snakePositionY = this.snakePositionY - 1;
-  
+       //this.snakePositionX = this.snakePositionX + random(-1, 1);
+       
+       // Moving at a constant speed
+       this.snakePositionX = this.snakePositionX  + 1;
+
+       if(this.snakePositionX > 300){
+           this.snakePositionX = this.snakePositionX - 1;
+       }
+
+
+       //one version
+    /*this.directionWidth = this.directionWidth + this.xSpeed; 
+   this.directionHeight = this.directionHeight + this.ySpeed;
+    
+  if (this.directionWidth < 0){
+   this.xSpeed = this.xSpeed * -1; 
+  }
+    
+  if (this.directionWidth > width){
+   this.xSpeed = this.xSpeed * -1; 
+  }
+    if (this.directionHeight < 0){
+   this.ySpeed = this.ySpeed * -1; 
+  }
+    
+  if (this.directionHeight > width){
+   this.ySpeed = this.ySpeed * -1; 
+  }*/
     
     }
     
