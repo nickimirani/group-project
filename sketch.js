@@ -3,8 +3,8 @@ let enemy2;
 let enemy3;
 let enemy4;
 
-let snakePositionX = 230;
-let snakePositionY = 255;
+let snakePositionX;
+let snakePositionY;
 let stevePositionX= 250;
 let stevePositionY= 155;
 
@@ -14,6 +14,7 @@ let steveSize=20;
 
 let speed = 10;
 let changeDirection = false;
+
 
 let score = 0;
 //initial level
@@ -25,6 +26,8 @@ let bigCoinSound;
 
 let coins=[];
 let bigCoins = [];
+
+
 
 function preload(){
 
@@ -54,6 +57,7 @@ function setup(){
     }
   }
 }
+
 
 function draw(){
 
@@ -88,65 +92,46 @@ function draw(){
   } 
 
 
- //snakes
- class Enemies{
+      //snakes
+      class Enemies{
     
-    constructor(snakePositionX, snakePositionY){
-      
-      this.x = snakePositionX;
-      this.y = snakePositionY;
-
-      //this.x = random(width);
+        constructor(xPos, yPos){
+          
+            this.xPos = xPos;
+            this.yPos = yPos;
+    
+          //let directions =  [-1, +1, width, -width];
+    //let direction = directions[Math.floor(Math.random() * directions.length)];
+    
+    //this.x = random(width);
       //this.y = random(height);
-      //this.xSpeed = random(-1,1);
-      //this.ySpeed = random(-1,1);
-     
+      this.speed = 1;
+         
+        }
+    
+    //snakes movement
+    move(){
+    
+        this.xPos += random(-this.speed, this.speed);
+        this.yPos += random(-this.speed, this.speed);
+    
+    }
+    
+    //drawing snakes
+    show() {
+        
+        strokeWeight(4);
+        fill(0,255,0);
+        rect(this.xPos, this.yPos, 20,20);
+    }
     }
 
-//snakes movement
-move(){
-    /*this.x = this.x + random(50, -50);
-    this.y = this.y + random(50, -50);*/
-/*this.x = this.x + this.directionX; 
-this.y = this.y + this.directionY;*/
-
-  /*this.x = this.x + this.xSpeed; 
-this.y = this.y + this.ySpeed;
-
-if (this.x < 0){
-this.xSpeed = this.xSpeed  -1; 
-}
-
-if (this.x > width){
-this.xSpeed = this.xSpeed  -1; 
-}
-if (this.y < 0){
-this.ySpeed = this.ySpeed  -1; 
-}
-
-if (this.y > width){
-this.ySpeed = this.ySpeed  -1; 
-}*/
-
-this.x = snakePositionX + 1;
-
-
-}
-
-//drawing snakes
-show() {
-    
-    strokeWeight(4);
-    fill(0,255,0);
-    rect(this.x, this.y, 20,20);
-}
-}
 
 //snake positions
-enemy1 = new Enemies(268,340);
-enemy2 = new Enemies(196,340);
-enemy3 = new Enemies(196,270);
-enemy4 = new Enemies(268,270);
+enemy1 = new Enemies(268,240);
+enemy2 = new Enemies(268,280);
+enemy3 = new Enemies(268,340);
+enemy4 = new Enemies(268,390);
 
     
     enemy1.move();
@@ -459,7 +444,7 @@ enemy4 = new Enemies(268,270);
 
     //if player and snake collide / game over
 
-    if (snakePositionX === stevePositionX && snakePositionY === stevePositionY){
+    if (stevePositionX === this.xPos && stevePositionY === this.yPos){
         console.log("collision");
     }
 
@@ -655,6 +640,11 @@ class Bigcoin {
       
         this.behavior = behavior; 
       }*/
+
+
+
+
+
 
 
 
