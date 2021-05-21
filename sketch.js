@@ -56,6 +56,13 @@ function setup(){
       bigCoins.push(new Bigcoin(70+a*360,70+b*520));
     }
   }
+
+
+  //snake positions
+enemy1 = new Enemies(268,240);
+enemy2 = new Enemies(268,280);
+enemy3 = new Enemies(268,340);
+enemy4 = new Enemies(268,390);
 }
 
 
@@ -91,58 +98,6 @@ function draw(){
     }
   } 
 
-
-      //snakes
-      class Enemies{
-    
-        constructor(snakePositionX, snakePositionY){
-          
-            this.snakePositionX = snakePositionX;
-            this.snakePositionY= snakePositionY;
-    
-          //let directions =  [-1, +1, width, -width];
-    //let direction = directions[Math.floor(Math.random() * directions.length)];
-    
-    //this.x = random(width);
-      //this.y = random(height);
-      this.speed = 5;
-
-      this.direction1 = 100;
-         
-        }
-    
-    //snakes movement
-    move(){
-    
-
-        /*this.xPos += random(-this.speed, this.speed);
-        this.yPos += random(-this.speed, this.speed);*/
-
-       //snakePositionX = 5; 
-    
-       this.snakePositionX = this.snakePositionX + random(-1, 1);
-  // Moving up at a constant speed
-  this.snakePositionY = this.snakePositionY - 1;
-  
-    
-    }
-    
-    //drawing snakes
-    show() {
-        
-        strokeWeight(4);
-        fill(0,255,0);
-        rect(this.snakePositionX, this.snakePositionY, 20,20);
-    }
-    }
-
-
-//snake positions
-enemy1 = new Enemies(268,240);
-enemy2 = new Enemies(268,280);
-enemy3 = new Enemies(268,340);
-enemy4 = new Enemies(268,390);
-
     
     enemy1.move();
     enemy1.show();
@@ -153,8 +108,7 @@ enemy4 = new Enemies(268,390);
     enemy4.move();
     enemy4.show();
 
-    
-    
+
     
     //steve start position
     steve(stevePositionX,stevePositionY); 
@@ -643,6 +597,50 @@ this.x += cos(this.rotation) * this.speed;
 this.y += sin(this.rotation) * this.speed;*/ 
 //move towards player
 
+
+    //snakes
+    class Enemies{
+    
+    constructor(snakePositionX, snakePositionY){
+          
+        this.snakePositionX = snakePositionX;
+        this.snakePositionY= snakePositionY;
+    
+          //let directions =  [-1, +1, width, -width];
+    //let direction = directions[Math.floor(Math.random() * directions.length)];
+    
+    //this.x = random(width);
+      //this.y = random(height);
+      this.speed = 5;
+
+      this.direction1 = 100;
+         
+        }
+    
+    //snakes movement
+    move(){
+    
+
+        /*this.xPos += random(-this.speed, this.speed);
+        this.yPos += random(-this.speed, this.speed);*/
+
+       //snakePositionX = 5; 
+    
+       this.snakePositionX = this.snakePositionX + random(-1, 1);
+  // Moving up at a constant speed
+  this.snakePositionY = this.snakePositionY - 1;
+  
+    
+    }
+    
+    //drawing snakes
+    show() {
+        
+        strokeWeight(4);
+        fill(0,255,0);
+        rect(this.snakePositionX, this.snakePositionY, 20,20);
+    }
+    }
 
 
     
