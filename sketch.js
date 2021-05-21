@@ -591,7 +591,7 @@ function steve(x,y){
 }
 
 
-//coin
+// Object that stores positions of coins
 class coin {
     constructor(x, y) {
         this.x = x;
@@ -605,7 +605,7 @@ class coin {
     }
 }
 
-//Bigcion
+// Object that stores positions of big coins
 class Bigcoin {
     constructor(x, y) {
 
