@@ -525,31 +525,12 @@ enemy4 = new Enemies(268,390);
    endShape();
  
 
-   p5.prototype.collideRectCircle = function (rx, ry, rw, rh, cx, cy, diameter) {
-
-  var testX = cx;
-  var testY = cy;
-
- 
-  if (cx < rx){         testX = rx;       // left edge
-  }else if (cx > rx+rw){ testX = rx+rw;  }  // right edge
-
-  if (cy < ry){         testY = ry;       // top edge
-  }else if (cy > ry+rh){ testY = ry+rh; }   // bottom edge
-
-  // // get distance from closest edges
-  var distance = this.dist(cx,cy,testX,testY);
-
-  // if the distance is less than the radius, collision!
-  if (distance <= diameter/2) {
-    
-    ding.play();
-  }
-
-};
 
 
 }
+
+
+
 //I put this down here because it's here where functions are
 //Gameover(check the hit box about steve and snake)
 function collideRectRect(stevePositionX, stevePositionY, w, h, snakePositionX, snakePositionY, w2, h2) {
