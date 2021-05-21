@@ -95,28 +95,35 @@ function draw(){
       //snakes
       class Enemies{
     
-        constructor(xPos, yPos){
+        constructor(snakePositionX, snakePositionY){
           
-            this.xPos = xPos;
-            this.yPos = yPos;
+            this.snakePositionX = snakePositionX;
+            this.snakePositionY= snakePositionY;
     
           //let directions =  [-1, +1, width, -width];
     //let direction = directions[Math.floor(Math.random() * directions.length)];
     
     //this.x = random(width);
       //this.y = random(height);
-      this.speed = speed;
+      this.speed = 5;
+
+      this.direction1 = 100;
          
         }
     
     //snakes movement
     move(){
     
-        //this.xPos += random(-this.speed, this.speed);
-        //this.yPos += random(-this.speed, this.speed);
 
-        this.xPos += random(speed);
-        this.yPos += random(speed);
+        /*this.xPos += random(-this.speed, this.speed);
+        this.yPos += random(-this.speed, this.speed);*/
+
+       //snakePositionX = 5; 
+    
+       this.snakePositionX = this.snakePositionX + random(-1, 1);
+  // Moving up at a constant speed
+  this.snakePositionY = this.snakePositionY - 1;
+  
     
     }
     
@@ -125,7 +132,7 @@ function draw(){
         
         strokeWeight(4);
         fill(0,255,0);
-        rect(this.xPos, this.yPos, 20,20);
+        rect(this.snakePositionX, this.snakePositionY, 20,20);
     }
     }
 
@@ -148,8 +155,10 @@ enemy4 = new Enemies(268,390);
 
     
     
+    
     //steve start position
     steve(stevePositionX,stevePositionY); 
+
     
     
     //steve movement
@@ -646,9 +655,12 @@ class Bigcoin {
       }*/
 
 
+      /*this.rotation = atan2(player.y - this.y, player.x - this.y);
+this.speed = 2.5;
 
-
-
+this.x += cos(this.rotation) * this.speed;
+this.y += sin(this.rotation) * this.speed;*/ 
+//move towards player
 
 
 
