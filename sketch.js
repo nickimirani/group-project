@@ -105,15 +105,18 @@ function draw(){
     
     //this.x = random(width);
       //this.y = random(height);
-      this.speed = 1;
+      this.speed = speed;
          
         }
     
     //snakes movement
     move(){
     
-        this.xPos += random(-this.speed, this.speed);
-        this.yPos += random(-this.speed, this.speed);
+        //this.xPos += random(-this.speed, this.speed);
+        //this.yPos += random(-this.speed, this.speed);
+
+        this.xPos += random(speed);
+        this.yPos += random(speed);
     
     }
     
@@ -142,6 +145,7 @@ enemy4 = new Enemies(268,390);
     enemy3.show();
     enemy4.move();
     enemy4.show();
+
     
     
     //steve start position
