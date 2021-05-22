@@ -32,3 +32,11 @@ main{
     font-weight: 600;
     color: blue;
 }
+
+h1{
+    font-family: 'Franklin Gothic Medium',  sans-serif;
+    color: white;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
