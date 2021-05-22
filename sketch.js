@@ -2,6 +2,7 @@ let enemy1;
 let enemy2;
 let enemy3;
 let enemy4;
+let snakes = [];
 
 let snakePositionX;
 let snakePositionY;
@@ -56,13 +57,13 @@ function setup(){
       bigCoins.push(new Bigcoin(70+a*360,70+b*520));
     }
   }
-
-
+  
   //snake positions
 enemy1 = new Enemies(268,300);
 enemy2 = new Enemies(268,330);
 enemy3 = new Enemies(268,360);
 enemy4 = new Enemies(268,390);
+
 }
 
 
@@ -108,7 +109,6 @@ function draw(){
     enemy4.move();
     enemy4.show();
 
-
     
     //steve start position
     steve(stevePositionX,stevePositionY); 
@@ -140,31 +140,32 @@ function draw(){
 
 
    
-    //so steve & snakes doesn't move outside of the canvas
+    //so steve & snakes don't move outside of the canvas
 
     if(stevePositionX < 60){
         stevePositionX = 60;
     }
-    if(snakePositionX < 60){
-        snakePositionX = 60;
+    if(this.snakePositionX < 60){
+        console.log("bhbhnjk")
+        this.snakePositionX = 60;
     }
     if(stevePositionX > 440){
         stevePositionX = 440;
     }
-    if(snakePositionX > 440){
-        snakePositionX = 440;
+    if(this.snakePositionX > 440){
+        this.snakePositionX = 440;
     }
     if(stevePositionY < 55){
         stevePositionY = 55;
     }
-    if(snakePositionY < 60){
-        snakePositionY = 60;
+    if(this.snakePositionY < 60){
+        this.snakePositionY = 60;
     }
     if(stevePositionY > 600){
         stevePositionY = 600;
     }
-    if(snakePositionY > 575){
-        snakePositionY = 575;
+    if(this.snakePositionY > 575){
+        this.snakePositionY = 575;
     }
 
     //Make sure player does not go through the walls(horizontal line)
@@ -411,7 +412,7 @@ function draw(){
 
     //if player and snake collide / game over
 
-    if (stevePositionX === snakePositionX && stevePositionY === snakePositionY){
+    if (stevePositionX === enemy1.snakePositionX && stevePositionY === enemy1.snakePositionY){
         console.log("collision");
     }
 
@@ -601,7 +602,7 @@ this.y += sin(this.rotation) * this.speed;*/
     //snakes
     class Enemies{
     
-    constructor(snakePositionX,snakePositionY){
+    constructor(snakePositionX, snakePositionY){
     
      //let directions =  [-1, +1, width, -width];
     //let direction = directions[Math.floor(Math.random() * directions.length)];
@@ -610,13 +611,18 @@ this.y += sin(this.rotation) * this.speed;*/
     this.snakePositionY= snakePositionY; //rätt
       
     
-    this.speed = 5;
-
+    this.speed = speed;
     //one version
-      /*this.directionWidth = random(width);
-      this.directionHeight = random(height);
+      //this.snakePositionX = random(width);
+      //this.snakePositionY = random(height);
       this.xSpeed = random(-speed,speed);
-      this.ySpeed = random(-speed,speed);*/
+      this.ySpeed = random(-speed,speed);
+
+
+      // set default properties
+      /*this.snakePositionX = random(0, width);
+      this.snakePositionY = 0;
+      this.speed = random(1, 4);*/
 
          
         }
@@ -631,37 +637,44 @@ this.y += sin(this.rotation) * this.speed;*/
        //this.snakePositionX = this.snakePositionX + random(-1, 1);
        
        // Moving at a constant speed
-       this.snakePositionX = this.snakePositionX  + 1;
+       /*this.snakePositionX = this.snakePositionX  + speed;
 
-       if(this.snakePositionX > 300){
-           this.snakePositionX = this.snakePositionX - 1;
+       if(this.snakePositionX > 305){
+           this.snakePositionY = this.snakePositionY + speed;
+           this.snakePositionX = this.snakePositionX  - speed;
+           changeDirection = true;
        }
+
+       if(this.snakePositionY > 500){
+           this.snakePositionX = this.snakePositionX + speed;
+           this.snakePositionY = this.snakePositionY  - speed;
+       }*/
 
 
        //one version
-    /*this.directionWidth = this.directionWidth + this.xSpeed; 
-   this.directionHeight = this.directionHeight + this.ySpeed;
+    this.snakePositionX = this.snakePositionX + this.xSpeed; 
+   this.snakePositionY = this.snakePositionY + this.ySpeed;
     
-  if (this.directionWidth < 0){
+  if (this.snakePositionX < 0){
    this.xSpeed = this.xSpeed * -1; 
   }
     
-  if (this.directionWidth > width){
+  if (this.snakePositionX > width){
    this.xSpeed = this.xSpeed * -1; 
   }
-    if (this.directionHeight < 0){
+    if (this.snakePositionY < 0){
    this.ySpeed = this.ySpeed * -1; 
   }
     
-  if (this.directionHeight > width){
+  if (this.snakePositionY > width){
    this.ySpeed = this.ySpeed * -1; 
-  }*/
+  }
     
     }
     
     //drawing snakes
     show() {
-        
+        rectMode(CENTER);
         strokeWeight(4);
         fill(0,255,0);
         rect(this.snakePositionX, this.snakePositionY, 20,20);
