@@ -529,12 +529,10 @@ class Bigcoin {
     class Enemies{
     
     constructor(snakePositionX, snakePositionY){
-    
-     //let directions =  [-1, +1, width, -width];
-    //let direction = directions[Math.floor(Math.random() * directions.length)];
+
   
     this.snakePositionX = snakePositionX;
-    this.snakePositionY= snakePositionY; //rätt
+    this.snakePositionY= snakePositionY; 
       
     
     this.speed = 20;
@@ -543,15 +541,7 @@ class Bigcoin {
       //this.snakePositionY = random(height);
       this.xSpeed = random(-speed,speed);
       this.ySpeed = random(-speed,speed);
-
-
-      // set default properties
-      /*this.snakePositionX = random(0, width);
-      this.snakePositionY = 0;
-      this.speed = random(1, 4);*/
-
-         
-        }
+    }
     
     //snakes movement
     move(){
