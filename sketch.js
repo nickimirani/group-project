@@ -43,7 +43,9 @@ function setup(){
   frameRate(speed); 
   coinsound = loadSound('mixkit-space-coin-win-notification-271.wav');
   bigCoinSound = loadSound('mixkit-unlock-game-notification-253.wav');
-  winSound=loadSound('the level win.wav')
+  winSound=loadSound('the level win.wav');
+
+  textAlign(CENTER, CENTER);
 
   
   //ding = loadSound('assets/coinsound.mp3');
@@ -482,26 +484,6 @@ function draw(){
 }
 
 
-
-//I put this down here because it's here where functions are
-//Gameover(check the hit box about steve and snake)
-function collideRectRect(stevePositionX, stevePositionY, w, h, snakePositionX, snakePositionY, w2, h2) {
-    if ( 
-       stevePositionX + w >= snakePositionX &&    
-        // r1 right edge past r2 left
-       stevePositionX <= snakePositionX + w2 &&    
-        // r1 left edge past r2 right
-       stevePositionY + h >= snakePositionY &&    
-        // r1 top edge past r2 bottom
-       stevePositionY <= snakePositionY + h2)     
-        // r1 bottom edge past r2 top   
-   {    
-        
-       redraw();
-    }
-}
-
-
 //player
 function steve(x,y){
     noStroke();
@@ -555,7 +537,7 @@ class Bigcoin {
     this.snakePositionY= snakePositionY; //rätt
       
     
-    this.speed = speed;
+    this.speed = 20;
     //one version
       //this.snakePositionX = random(width);
       //this.snakePositionY = random(height);
@@ -622,13 +604,17 @@ class Bigcoin {
         //COLLISION
         if(stevePositionX + 20 > this.snakePositionX && stevePositionX < this.snakePositionX + 20 && stevePositionY + 20 > this.snakePositionY && stevePositionY < this.snakePositionY + 20){
             console.log('bumped!');
-            noLoop();
             //player loses a life
             lives--;
             document.getElementById("lives").innerHTML = "LIVES LEFT: " + lives ;
+            //the game pauses for 3 seconds and then continues
+            setTimeout(collision, 3000);
+            noLoop();
+            
         }
-        if(lives == 1){
-            document.getElementById("lives").innerHTML = "LIVES LEFT: " + lives ;
+        if(lives == 0){
+            //if player has lost all 3 lives
+            gameOver();  
         }
     
     }
@@ -642,6 +628,44 @@ class Bigcoin {
     }
     }
 
+
+function collision(){
+
+    //the snakes go back to their inital positions
+    enemy1 = new Enemies(268,300);
+    enemy2 = new Enemies(268,330);
+    enemy3 = new Enemies(268,360);
+    enemy4 = new Enemies(268,390);
+    //the game continues 
+    loop();
+}
+
+function gameOver(){
+
+    //play sound
+
+    noLoop();
+
+    fill(255);
+    textSize(30);
+    text("GAME OVER" ,250, 250);
+    //fill(255);
+    textSize(15);
+  	text("YOUR SCORE = " + score , 250, 300);
+    //fill(255);
+    textSize(15);
+	text("press ENTER to play again!", 250, 350);
+
+}
+
+
+function keyPressed(){
+
+    if(keyCode === ENTER){
+    location.reload();
+    }
+
+}
 
     
 
