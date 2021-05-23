@@ -20,6 +20,7 @@ let changeDirection = false;
 let score = 0;
 //initial level
 let level = 1;
+let lives = 3;
 
 let ding;
 let coinsound;
@@ -79,6 +80,7 @@ function draw(){
         if(distance1 < radius1) {
           coins.splice(i,1);
           coinsound.play();
+          //score goes up
           score++;
           document.getElementById("score").innerHTML = "SCORE: " + score;
           
@@ -93,9 +95,9 @@ function draw(){
         if(distance2 < radius2) {
            bigCoins.splice(a,1);
            bigCoinSound.play();
+           //score goes up
            score++;
            document.getElementById("score").innerHTML = "SCORE: " + score;
-           console.log("yay");
     }
   } 
 
@@ -140,33 +142,21 @@ function draw(){
 
 
    
-    //so steve & snakes don't move outside of the canvas
+    //so steve doesn't move outside of the canvas
 
     if(stevePositionX < 60){
         stevePositionX = 60;
     }
-    if(this.snakePositionX < 60){
-        console.log("bhbhnjk")
-        this.snakePositionX = 60;
-    }
     if(stevePositionX > 440){
         stevePositionX = 440;
-    }
-    if(this.snakePositionX > 440){
-        this.snakePositionX = 440;
     }
     if(stevePositionY < 55){
         stevePositionY = 55;
     }
-    if(this.snakePositionY < 60){
-        this.snakePositionY = 60;
-    }
     if(stevePositionY > 600){
         stevePositionY = 600;
     }
-    if(this.snakePositionY > 575){
-        this.snakePositionY = 575;
-    }
+
 
     //Make sure player does not go through the walls(horizontal line)
     //First horizontal line
@@ -409,14 +399,6 @@ function draw(){
         stevePositionY=410;
     }
     
-
-    //if player and snake collide / game over
-
-    if (stevePositionX === enemy1.snakePositionX && stevePositionY === enemy1.snakePositionY){
-        console.log("collision");
-    }
-
-
     
    //game fence
    noFill();
@@ -516,11 +498,9 @@ function collideRectRect(stevePositionX, stevePositionY, w, h, snakePositionX, s
 
 //player
 function steve(x,y){
-    //strokeWeight(1);
-    //stroke(51);
+
     rectMode(CENTER);
     fill(255,255, 0);
-    //rect(x,y,30, 30,10);
    rect(x,y,20,20,7);
 }
 
@@ -555,48 +535,6 @@ class Bigcoin {
     }
 }
 
-/*function moveSnake(enemy1,enemy2, enemy3, enemy4) {
-    var directions =  [-1, +1, width, -width];
-    let direction = directions[Math.floor(Math.random() * directions.length)];
-
-    ghost.timerId = setInterval(function() {
-      //if the next squre your ghost is going to go to does not have a ghost and does not have a wall
-      if  (!squares[ghost.currentIndex + direction].classList.contains('ghost') &&
-        !squares[ghost.currentIndex + direction].classList.contains('wall') ) {
-          //remove the ghosts classes
-          squares[ghost.currentIndex].classList.remove(ghost.className)
-          squares[ghost.currentIndex].classList.remove('ghost', 'scared-ghost')
-          //move into that space
-          ghost.currentIndex += direction
-          squares[ghost.currentIndex].classList.add(ghost.className, 'ghost')
-      //else find a new random direction ot go in
-      } else direction = directions[Math.floor(Math.random() * directions.length)]
-    }*/
-
-
-    /*function Tile(x, y, type, behavior) {
-
-        this.x = x;
-        this.y = y;
-        this.type = type;
-      
-          this.destination = (-1, -1);
-        this.moving = false;
-      
-        this.intact = true;
-      
-        this.speed = 0.2;
-      
-        this.behavior = behavior; 
-      }*/
-
-
-      /*this.rotation = atan2(player.y - this.y, player.x - this.y);
-this.speed = 2.5;
-
-this.x += cos(this.rotation) * this.speed;
-this.y += sin(this.rotation) * this.speed;*/ 
-//move towards player
 
 
     //snakes
@@ -651,24 +589,41 @@ this.y += sin(this.rotation) * this.speed;*/
        }*/
 
 
+
        //one version
     this.snakePositionX = this.snakePositionX + this.xSpeed; 
    this.snakePositionY = this.snakePositionY + this.ySpeed;
+
+         //so snakes don't move outside of canvas
+         if(this.snakePositionX < 60){
+            this.xSpeed = this.xSpeed * -1; 
+        }
     
-  if (this.snakePositionX < 0){
-   this.xSpeed = this.xSpeed * -1; 
-  }
-    
-  if (this.snakePositionX > width){
-   this.xSpeed = this.xSpeed * -1; 
-  }
-    if (this.snakePositionY < 0){
-   this.ySpeed = this.ySpeed * -1; 
-  }
-    
-  if (this.snakePositionY > width){
-   this.ySpeed = this.ySpeed * -1; 
-  }
+           if(this.snakePositionX > 440){
+            //this.snakePositionX = 440;
+            this.xSpeed = this.xSpeed * -1;  
+        }
+        if(this.snakePositionY < 60){
+            //this.snakePositionY = 60;
+            this.ySpeed = this.ySpeed * -1;  
+        }
+        if(this.snakePositionY > 575){
+            //this.snakePositionY = 575;
+            this.ySpeed = this.ySpeed * -1; 
+        }
+
+
+        //COLLISION
+        if(stevePositionX + 20 > this.snakePositionX && stevePositionX < this.snakePositionX + 20 && stevePositionY + 20 > this.snakePositionY && stevePositionY < this.snakePositionY + 20){
+            console.log('bumped!');
+            noLoop();
+            //player loses a life
+            lives--;
+            document.getElementById("lives").innerHTML = "LIVES LEFT: " + lives ;
+        }
+        if(lives == 1){
+            document.getElementById("lives").innerHTML = "LIVES LEFT: " + lives ;
+        }
     
     }
     
