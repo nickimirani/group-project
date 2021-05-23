@@ -10,6 +10,7 @@ main{
 
 .container{
     display: flex;
+    padding-bottom: 0;
 }
 
 #score{
@@ -39,4 +40,8 @@ h1{
     margin: auto;
     display: flex;
     justify-content: center;
+}
+
+#playAgain{
+    color:blueviolet;
 }
