@@ -25,6 +25,7 @@ let lives = 3;
 let ding;
 let coinsound;
 let bigCoinSound;
+let winSound;
 
 let coins=[];
 let bigCoins = [];
@@ -42,6 +43,8 @@ function setup(){
   frameRate(speed); 
   coinsound = loadSound('mixkit-space-coin-win-notification-271.wav');
   bigCoinSound = loadSound('mixkit-unlock-game-notification-253.wav');
+  winSound=loadSound('the level win.wav')
+
   
   //ding = loadSound('assets/coinsound.mp3');
 
@@ -138,6 +141,9 @@ function draw(){
      if(score == 144 ){
     //plus 2 because the first level is considered 0
     document.getElementById("level").innerHTML = "LEVEL: " + 2;
+    winSound.play();
+    score=0;
+    document.getElementById("score").innerHTML="SCORE: "+score;
 }
 
 
@@ -498,7 +504,7 @@ function collideRectRect(stevePositionX, stevePositionY, w, h, snakePositionX, s
 
 //player
 function steve(x,y){
-
+    noStroke();
     rectMode(CENTER);
     fill(255,255, 0);
    rect(x,y,20,20,7);
@@ -629,8 +635,8 @@ class Bigcoin {
     
     //drawing snakes
     show() {
+        noStroke();
         rectMode(CENTER);
-        strokeWeight(4);
         fill(0,255,0);
         rect(this.snakePositionX, this.snakePositionY, 20,20);
     }
