@@ -655,9 +655,7 @@ function gameWin(){
       fill(255);
       textSize(30);
       text("GAME WIN" ,250, 250);
-      //fill(255);
-    
-      //fill(255);
+      
       textSize(15);
       text("press ENTER to play again!", 250, 350);
   }
