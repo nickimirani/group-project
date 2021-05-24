@@ -146,6 +146,7 @@ function draw(){
     winSound.play();
     score=0;
     document.getElementById("score").innerHTML="SCORE: "+score;
+    gameWin();
 }
 
 
@@ -647,6 +648,19 @@ function gameOver(){
 	text("press ENTER to play again!", 250, 350);
 
 }
+
+function gameWin(){
+    noLoop();
+  
+      fill(255);
+      textSize(30);
+      text("GAME WIN" ,250, 250);
+      //fill(255);
+    
+      //fill(255);
+      textSize(15);
+      text("press ENTER to play again!", 250, 350);
+  }
 
 
 function keyPressed(){
