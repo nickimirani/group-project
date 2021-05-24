@@ -665,6 +665,7 @@ function gameWin(){
 
 function keyPressed(){
 
+    //reload page to play again
     if(keyCode === ENTER){
     location.reload();
     }
